@@ -26,6 +26,8 @@ namespace HardWareTech.WEB.Controllers
             ViewBag.TotalManutencoes = totalManutencoes;
             ViewBag.TotalCategorias = totalCategorias;
             return View();
+
+            //das
         }
 
         public IActionResult Privacy()
