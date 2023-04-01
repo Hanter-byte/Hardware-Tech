@@ -7,12 +7,11 @@ namespace HardWareTech.WEB.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly VwProdutoClienteManutencaoService ovwProdutoClienteManutencaoService = new();
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController()
         {
-            _logger = logger;
+           
         }
 
         public IActionResult Index()
@@ -26,19 +25,11 @@ namespace HardWareTech.WEB.Controllers
             ViewBag.TotalManutencoes = totalManutencoes;
             ViewBag.TotalCategorias = totalCategorias;
             return View();
-
-            //das
         }
 
         public IActionResult Privacy()
         {
             return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
