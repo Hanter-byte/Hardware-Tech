@@ -3,7 +3,7 @@
 <h1 class="text-center display-4">Listagem de Manutenções</h1>
 
 <div class="d-gird gap-2 d-md-flex justify-content-md-start">
-    <a class="btn btn-primary" role="button" asp-controller="Manutencoes" asp-action="Create">Nova Manutenção</a>
+    <a class="btn btn-primary" role="button" asp-controller="Manutencoes" asp-action="Create"><i class="fa fa-plus-circle"></i> Nova Manutenção</a>
 </div>
 <br />
 
@@ -39,6 +39,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.DataFinalizacao)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Feito)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -56,16 +59,13 @@
                     @Html.DisplayFor(modelItem => item.NomeProduto)
                 </td>
                 @{
-                    var styleStatus = "rounded text-white bg-success";
-                        if(DateTime.Now.Date > item.DataFinalizacao)
-                        {
-                        styleStatus = "rounded text-white bg-danger";
-                    }
+                    var styleStatus = "rounded text-white bg-success"; if (DateTime.Now.Date > item.DataFinalizacao) { styleStatus = "rounded text-white bg-danger"; }
                     else if (DateTime.Now.Date.Equals(item.DataFinalizacao))
-                        {
-                            styleStatus = "bg-warning";
-                        }
+                    {
+                        styleStatus =
+                "bg-warning";
                     }
+                }
                 <td>
                     @Html.DisplayFor(modelItem => item.DataCadastro)
                 </td>
@@ -73,11 +73,18 @@
                     @Html.DisplayFor(modelItem => item.DataFinalizacao)
                 </td>
                 <td>
-                    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@item.Id">Editar</a>
-                    <a asp-action="Details" class="btn btn-success" asp-route-id="@item.Id">Detalhar</a>
+                    <div class="form-check">
+                        @Html.CheckBoxFor(modelItem => item.Feito, new { @class = "form-check-input" })
+                        <label class="form-check-label" for="@Html.IdFor(modelItem => item.Feito)">Feito</label>
+                    </div>
+                </td>
+
+                <td>
+                    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
+                    <a asp-action="Details" class="btn btn-success" asp-route-id="@item.Id"><i class="fa fa-search"></i></a>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal-@item.Id">
-                        Deletar
+                        <i class="fa fa-trash"></i>
                     </button>
                     <!-- Modal -->
                     <div class="modal fade" id="DeleteModal-@item.Id" tabindex="-1" aria-labelledby="DeleteModal" aria-hidden="true">

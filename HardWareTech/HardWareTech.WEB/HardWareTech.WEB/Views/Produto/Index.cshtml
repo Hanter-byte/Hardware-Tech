@@ -7,7 +7,7 @@
 <h1 class="text-center display-4">Listagem de Produtos</h1>
 
 <div class="d-gird gap-2 d-md-flex justify-content-md-start">
-    <a class="btn btn-primary" role="button" asp-controller="Produto" asp-action="Create">Novo Produto</a>
+    <a class="btn btn-primary" role="button" asp-controller="Produto" asp-action="Create"><i class="fa fa-plus-circle"></i> Novo Produto</a>
 </div>
 <br />
 
@@ -74,11 +74,11 @@
                     @Html.DisplayFor(modelItem => item.Datacadastro)
                 </td>
                 <td>
-                    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@item.Id">Editar</a>
-                    <a asp-action="Details" class="btn btn-success" asp-route-id="@item.Id">Detalhar</a>
+                    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
+                    <a asp-action="Details" class="btn btn-success" asp-route-id="@item.Id"><i class="fa fa-search"></i></a>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal-@item.Id">
-                        Deletar
+                        <i class="fa fa-trash"></i>
                     </button>
 
                     <!-- Modal -->

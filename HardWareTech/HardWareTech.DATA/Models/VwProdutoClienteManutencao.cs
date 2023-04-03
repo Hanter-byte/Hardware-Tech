@@ -35,6 +35,6 @@ namespace HardWareTech.DATA.Models
         public string NomeCliente { get; set; }
         [Column("dataFinalizacao", TypeName = "datetime")]
         public DateTime DataFinalizacao { get; set; }
-        public bool? Feito { get; set; }
+        public bool Feito { get; set; }
     }
 }
