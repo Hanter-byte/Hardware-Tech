@@ -75,6 +75,19 @@ namespace HardWareTech.WEB.Controllers
 
         public IActionResult Edit(int id)
         {
+            List<Categoria> oListCategoria = oCategoriaService.oRepositoryCategoria.SelecionarTodos();
+
+            List<SelectListItem> items = new List<SelectListItem>();
+            foreach (var produto in oListCategoria)
+            {
+                items.Add(new SelectListItem
+                {
+                    Text = produto.NomeCategoria,
+                    Value = produto.Id.ToString()
+                });
+            }
+            ViewBag.Categorias = items;
+
             Produto oProduto = oProdutoService.oRepositoryProduto.SelecionarPk(id);
             return View(oProduto);
         }
