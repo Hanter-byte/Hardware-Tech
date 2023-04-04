@@ -1,0 +1,49 @@
+﻿@model HardWareTech.DATA.Models.Servico
+
+<h1>Criação de Serviço</h1>
+
+<hr />
+<div>
+    <a class="btn btn-primary" asp-action="Index"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="card">
+                <div class="card-header">Informações do Serviço</div>
+                <div class="card-body row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="NomeServico" class="control-label"></label>
+                            <input asp-for="NomeServico" class="form-control" />
+                            <span asp-validation-for="NomeServico" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="Descricao" class="control-label"></label>
+                            <input asp-for="Descricao" class="form-control" />
+                            <span asp-validation-for="Descricao" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="Preco" class="control-label"></label>
+                            <input asp-for="Preco" class="form-control" />
+                            <span asp-validation-for="Preco" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div style="text-align: right;">
+                <div class="form-group">
+                    <input type="submit" value="Incluir" class="btn btn-success" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
