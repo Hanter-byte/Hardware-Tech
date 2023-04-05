@@ -23,6 +23,7 @@ namespace HardWareTech.DATA.Models
         public virtual DbSet<Produto> Produto { get; set; }
         public virtual DbSet<ProdutoClienteManutencao> ProdutoClienteManutencao { get; set; }
         public virtual DbSet<Servico> Servico { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<VwProdutoClienteManutencao> VwProdutoClienteManutencao { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
