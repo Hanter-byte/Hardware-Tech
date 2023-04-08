@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<HardWareTech.DATA.Models.VwProdutoClienteManutencao>
 
-<h1 class="text-center display-4">Listagem de Manutenções</h1>
+<h1 class="text-center display-4">Kanban de Manutenções</h1>
 
 <div class="d-gird gap-2 d-md-flex justify-content-md-start">
     <a class="btn btn-primary" role="button" asp-controller="Manutencoes" asp-action="Create"><i class="fa fa-plus-circle"></i> Nova Manutenção</a>
@@ -21,7 +21,66 @@
     </div>
 }
 
-<table id="myTable" class="table table-striped">
+
+<div class="board">
+    <div class="lanes">
+        <div class="swim-lane" id="todo-lane">
+            <h3 class="heading">Pendente</h3>
+            @foreach (var item in Model.Where(x => x.Feito == false))
+            {
+                var styleStatus = "rounded text-white bg-success"; if (DateTime.Now.Date > item.DataFinalizacao) { styleStatus = "rounded text-white bg-danger"; }
+                else if
+            (DateTime.Now.Date.Equals(item.DataFinalizacao)) { styleStatus = "bg-warning"; }
+
+                <p class="task @styleStatus" draggable="true" onclick="location.href='@Url.Action("Edit", new { id = item.Id })'">
+                    @item.NomeManutencao - @item.NomeCliente - @item.DataFinalizacao
+                </p>
+
+            }
+        </div>
+
+        <div class="swim-lane">
+            <h3 class="heading">Realizando</h3>
+            @foreach (var item in Model.Where(x => x.Feito == false))
+            {
+                var styleStatus = "rounded text-white bg-success"; if (DateTime.Now.Date > item.DataFinalizacao) { styleStatus = "rounded text-white bg-danger"; }
+                else if
+            (DateTime.Now.Date.Equals(item.DataFinalizacao)) { styleStatus = "bg-warning"; }
+
+               @* <p class="task @styleStatus" draggable="true">@item.NomeCliente - @item.NomeProduto - @item.DataFinalizacao</p>*@
+            }
+        </div>
+
+        <div class="swim-lane">
+            <h3 class="heading">Impedimento</h3>
+            @foreach (var item in Model.Where(x => x.Feito == false))
+            {
+                var styleStatus = "rounded text-white bg-success"; if (DateTime.Now.Date > item.DataFinalizacao) { styleStatus = "rounded text-white bg-danger"; }
+                else if
+            (DateTime.Now.Date.Equals(item.DataFinalizacao)) { styleStatus = "bg-warning"; }
+
+              @*  <p class="task @styleStatus" draggable="true">@item.NomeProduto - @item.NomeCliente</p>*@
+            }
+        </div>
+
+        <div class="swim-lane">
+            <h3 class="heading">Feito</h3>
+            @foreach (var item in Model.Where(x => x.Feito == true))
+            {
+                var styleStatus = "rounded text-white bg-success"; if (DateTime.Now.Date > item.DataFinalizacao) { styleStatus = "rounded text-white bg-danger"; }
+                else if
+            (DateTime.Now.Date.Equals(item.DataFinalizacao)) { styleStatus = "bg-warning"; }
+
+                <p class="task @styleStatus" draggable="true">@item.NomeManutencao - @item.NomeCliente - @item.DataFinalizacao</p>
+                <a asp-action="Edit" class="btn btn-primary" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+@*<table id="myTable" class="table table-striped">
     <thead>
         <tr>
             <th>
@@ -108,4 +167,4 @@
             </tr>
         }
     </tbody>
-</table>
+</table>*@

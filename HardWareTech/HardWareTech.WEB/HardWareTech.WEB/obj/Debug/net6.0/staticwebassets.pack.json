@@ -25,12 +25,20 @@
       "PackagePath": "staticwebassets\\js\\all.min.js"
     },
     {
+      "Id": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\js\\drag.js",
+      "PackagePath": "staticwebassets\\js\\drag.js"
+    },
+    {
       "Id": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\js\\fontawesome.min.js",
       "PackagePath": "staticwebassets\\js\\fontawesome.min.js"
     },
     {
       "Id": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\js\\todo.js",
+      "PackagePath": "staticwebassets\\js\\todo.js"
     },
     {
       "Id": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\lib\\bootstrap\\LICENSE",

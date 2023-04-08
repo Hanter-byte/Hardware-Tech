@@ -36,5 +36,15 @@ namespace HardWareTech.DATA.Models
         [Column("dataFinalizacao", TypeName = "datetime")]
         public DateTime DataFinalizacao { get; set; }
         public bool Feito { get; set; }
+        [Required]
+        [Column("nome_manutencao")]
+        [StringLength(50)]
+        [Unicode(false)]
+        public string NomeManutencao { get; set; }
+        [Required]
+        [Column("descricao")]
+        [StringLength(100)]
+        [Unicode(false)]
+        public string Descricao { get; set; }
     }
 }

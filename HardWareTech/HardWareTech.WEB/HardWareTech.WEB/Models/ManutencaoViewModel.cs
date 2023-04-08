@@ -11,6 +11,9 @@ namespace HardWareTech.WEB.Models
         public DateTime dataCadastro { get; set; }
         public DateTime dataEntrega { get; set; }
         public bool Feito { get; set; }
+        public string NomeManutencao { get; set; }
+        public string Descricao { get; set; }
+        public ProdutoClienteManutencao oProdutoClienteManutencao { get; set; }
 
         public List<Cliente> oListeCliente { get; set; }
         public List<Produto> oListProduto { get; set; }

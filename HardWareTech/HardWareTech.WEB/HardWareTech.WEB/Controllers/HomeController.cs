@@ -8,10 +8,10 @@ namespace HardWareTech.WEB.Controllers
     public class HomeController : Controller
     {
         private readonly VwProdutoClienteManutencaoService ovwProdutoClienteManutencaoService = new();
-
+       
         public HomeController()
         {
-           
+            
         }
 
         public IActionResult Index()

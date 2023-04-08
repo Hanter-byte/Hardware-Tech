@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YI6NI6spEASyB61YQub1KAd0g0bLnaFJb4/CGJf2w7I=",
+  "Hash": "1k60iki48OklcI/85UqVe01n2O35KkZoo2z3gsCrtvU=",
   "Source": "HardWareTech.WEB",
   "BasePath": "_content/HardWareTech.WEB",
   "Mode": "Default",
@@ -136,6 +136,23 @@
       "OriginalItemSpec": "wwwroot\\js\\all.min.js"
     },
     {
+      "Identity": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\js\\drag.js",
+      "SourceId": "HardWareTech.WEB",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\",
+      "BasePath": "_content/HardWareTech.WEB",
+      "RelativePath": "js/drag.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\drag.js"
+    },
+    {
       "Identity": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\js\\fontawesome.min.js",
       "SourceId": "HardWareTech.WEB",
       "SourceType": "Discovered",
@@ -168,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\js\\todo.js",
+      "SourceId": "HardWareTech.WEB",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\",
+      "BasePath": "_content/HardWareTech.WEB",
+      "RelativePath": "js/todo.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\todo.js"
     },
     {
       "Identity": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

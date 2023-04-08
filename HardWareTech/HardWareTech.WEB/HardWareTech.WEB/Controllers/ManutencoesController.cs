@@ -4,6 +4,7 @@ using HardWareTech.WEB.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using NuGet.Protocol;
+using System.Reflection.Metadata.Ecma335;
 
 namespace HardWareTech.WEB.Controllers
 {
@@ -37,6 +38,8 @@ namespace HardWareTech.WEB.Controllers
             {
                 var manutencao = new ProdutoClienteManutencao
                 {
+                    NomeManutencao = viewModel.NomeManutencao,
+                    Descricao = viewModel.Descricao,
                     DataCadastro = viewModel.dataCadastro,
                     DataFinalizacao = viewModel.dataEntrega,
                     IdProduto = viewModel.idProduto,
@@ -59,6 +62,19 @@ namespace HardWareTech.WEB.Controllers
                 TempData["MensagemErro"] = $"Ops, não conseguimos cadastrar sua manutenção, tente novamente, detalhe do erro: {ex.Message} ";
                 return RedirectToAction(nameof(Index));
             }
+        }
+
+        public IActionResult Edit(int id)
+        {
+           
+            ManutencaoViewModel oManutencaoViewModel = new();
+            oManutencaoViewModel.oListeCliente = _Service.oRepositoryCliente.SelecionarTodos();
+            oManutencaoViewModel.oListProduto = _Service.oRepositoryProduto.SelecionarTodos();
+
+            ProdutoClienteManutencao oProdutoClienteManutencao = _Service.oRepositoryProdutoClienteManutencao.SelecionarPk(id);
+            oManutencaoViewModel.oProdutoClienteManutencao = oProdutoClienteManutencao;
+
+            return View(oManutencaoViewModel);
         }
 
         public IActionResult Delete(int id)
