@@ -6,7 +6,14 @@ namespace HardWareTech.WEB.Controllers
 {
     public class ClienteController : Controller
     {
-        private ClienteService oClienteService = new ClienteService();
+
+        private ClienteService oClienteService = new();
+
+        public ClienteController()
+        {
+            oClienteService = new ClienteService();
+        }
+
         public IActionResult Index()
         {
             List<Cliente> oListCliente = oClienteService.oRepositoryCliente.SelecionarTodos();
@@ -27,6 +34,14 @@ namespace HardWareTech.WEB.Controllers
                 {
                     return View();
                 }
+
+                var cliente = new Cliente();
+                if (!cliente.ValidarCPF(model.Cpf))
+                {
+                    TempData["MensagemErro"] = $"CPF inválido!";
+                    return RedirectToAction("Index");
+                }
+
                 oClienteService.oRepositoryCliente.Incluir(model);
                 TempData["MensagemSucesso"] = $"Cliente cadastrado com sucesso!";
                 return RedirectToAction("Index");
@@ -37,6 +52,7 @@ namespace HardWareTech.WEB.Controllers
                 return RedirectToAction("Index");
             }
         }
+
 
         public IActionResult Details(int id)
         {
