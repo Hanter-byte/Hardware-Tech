@@ -77,6 +77,19 @@ namespace HardWareTech.WEB.Controllers
             return View(oManutencaoViewModel);
         }
 
+        [HttpPost]
+        public IActionResult Edit(ManutencaoViewModel oManutencaoViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                oManutencaoViewModel.oListeCliente = _Service.oRepositoryCliente.SelecionarTodos();
+                oManutencaoViewModel.oListProduto = _Service.oRepositoryProduto.SelecionarTodos();
+               return View(oManutencaoViewModel);
+            }
+            _Service.oRepositoryProdutoClienteManutencao.Alterar(oManutencaoViewModel.oProdutoClienteManutencao);
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Delete(int id)
         {
             try

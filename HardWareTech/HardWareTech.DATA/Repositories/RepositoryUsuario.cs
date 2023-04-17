@@ -14,5 +14,10 @@ namespace HardWareTech.DATA.Repositories
         {
 
         }
+
+        public Usuario BuscarPorLogin(string login)
+        {
+            return _Contexto.Usuario.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper());
+        }
     }
 }

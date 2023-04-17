@@ -9,5 +9,6 @@ namespace HardWareTech.DATA.Interfaces
 {
     internal interface IRepositoryUsuario : IRepositoryModel<Usuario>
     {
+        Usuario BuscarPorLogin(string login);
     }
 }

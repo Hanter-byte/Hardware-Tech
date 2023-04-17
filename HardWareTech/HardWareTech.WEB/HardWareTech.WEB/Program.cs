@@ -1,3 +1,4 @@
+using FastReport.Data;
 using HardWareTech.DATA.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ControleManutencaoContext>(options =>
     options.UseSqlServer("Data Source=CIAN019401165\\SQLEXPRESS;Initial Catalog=ControleManutencao;Integrated Security=True; Trust Server Certificate=true"));
+
+FastReport.Utils.RegisteredObjects.AddConnection(typeof(MsSqlDataConnection));//Report
 
 var app = builder.Build();
 
@@ -21,12 +24,14 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseFastReport();// Report
+
 app.UseRouting();
 
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Login}/{action=Index}/{id?}");
 
 app.Run();

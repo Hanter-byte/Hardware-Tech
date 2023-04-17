@@ -35,5 +35,11 @@ namespace HardWareTech.DATA.Models
         public string Senha { get; set; }
         [Column("datacadastro", TypeName = "date")]
         public DateTime Datacadastro { get; set; }
+
+        public bool SenhaValida(string senha)
+        {
+            return Senha == senha;
+        }
+
     }
 }

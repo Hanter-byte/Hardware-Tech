@@ -32,8 +32,8 @@
                 else if
             (DateTime.Now.Date.Equals(item.DataFinalizacao)) { styleStatus = "bg-warning"; }
 
-                <p class="task @styleStatus" draggable="true" onclick="location.href='@Url.Action("Edit", new { id = item.Id })'">
-                    @item.NomeManutencao - @item.NomeCliente - @item.DataFinalizacao
+                <p class="task " draggable="true" onclick="location.href='@Url.Action("Edit", new { id = item.Id })'">
+                    @item.NomeManutencao <br /> @item.NomeCliente - @item.DataFinalizacao.ToString("dd/MM/yyyy")
                 </p>
 
             }
@@ -47,11 +47,11 @@
                 else if
             (DateTime.Now.Date.Equals(item.DataFinalizacao)) { styleStatus = "bg-warning"; }
 
-               @* <p class="task @styleStatus" draggable="true">@item.NomeCliente - @item.NomeProduto - @item.DataFinalizacao</p>*@
+                @*<p class="task @styleStatus" draggable="true">@item.NomeCliente - @item.NomeProduto - @item.DataFinalizacao</p>*@
             }
         </div>
 
-        <div class="swim-lane">
+        @*<div class="swim-lane">
             <h3 class="heading">Impedimento</h3>
             @foreach (var item in Model.Where(x => x.Feito == false))
             {
@@ -59,9 +59,9 @@
                 else if
             (DateTime.Now.Date.Equals(item.DataFinalizacao)) { styleStatus = "bg-warning"; }
 
-              @*  <p class="task @styleStatus" draggable="true">@item.NomeProduto - @item.NomeCliente</p>*@
+                <p class="task @styleStatus" draggable="true">@item.NomeProduto - @item.NomeCliente</p>
             }
-        </div>
+        </div>*@
 
         <div class="swim-lane">
             <h3 class="heading">Feito</h3>
@@ -71,8 +71,10 @@
                 else if
             (DateTime.Now.Date.Equals(item.DataFinalizacao)) { styleStatus = "bg-warning"; }
 
-                <p class="task @styleStatus" draggable="true">@item.NomeManutencao - @item.NomeCliente - @item.DataFinalizacao</p>
-                <a asp-action="Edit" class="btn btn-primary" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
+                <p class="task @styleStatus" draggable="true" onclick="location.href='@Url.Action("Edit", new { id = item.Id })'">
+                    @item.NomeManutencao <br /> @item.NomeCliente - @item.DataFinalizacao.ToString("dd/MM/yyyy")
+                </p>
+
             }
         </div>
     </div>

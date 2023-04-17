@@ -22,26 +22,34 @@
                 <input id="idProduto" asp-for="oProdutoClienteManutencao.IdProduto" class="form-control" />
             </div>
 
-            @*<div class="card">
-                <div class="card-header">Informações da Manutenção</div>
+            <div class="card">
+                <div class="card-header">Datas</div>
                 <div class="card-body row">
                     <div class="col-md">
                         <div class="form-group">
-                            <label asp-for="NomeManutencao" class="control-label"></label>
-                            <input asp-for="NomeManutencao" class="form-control" />
-                            <span asp-validation-for="NomeManutencao" class="text-danger"></span>
+                            <label asp-for="oProdutoClienteManutencao.NomeManutencao" class="control-label"></label>
+                            <input asp-for="oProdutoClienteManutencao.NomeManutencao" class="form-control"  />
+                            <span asp-validation-for="oProdutoClienteManutencao.NomeManutencao" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="col-md">
                         <div class="form-group">
-                            <label asp-for="Descricao" class="control-label"></label>
-                            <input asp-for="Descricao" class="form-control" />
-                            <span asp-validation-for="Descricao" class="text-danger"></span>
+                            <label asp-for="oProdutoClienteManutencao.Descricao" class="control-label"></label>
+                            <input asp-for="oProdutoClienteManutencao.Descricao" class="form-control" />
+                            <span asp-validation-for="oProdutoClienteManutencao.Descricao" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-check">
+                            <input asp-for="oProdutoClienteManutencao.Feito" class="form-check-input" type="checkbox" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Feito
+                            </label>
                         </div>
                     </div>
                 </div>
             </div>
-            <br />*@
+            <br />
 
             <div class="card">
                 <div class="card-header">Cliente</div>
@@ -49,7 +57,7 @@
                     <table id="TableManutencao3" class="table table-striped">
                         <thead>
                             <tr>
-                                <th>
+                                <th hidden>
                                     @Html.DisplayNameFor(model => model.oCliente.Id)
                                 </th>
                                 <th>
@@ -70,7 +78,7 @@
                             @foreach (var item in Model.oListeCliente)
                             {
                                 <tr onclick="passIdCliente('@item.Id')">
-                                    <td>
+                                    <td hidden>
                                         @Html.DisplayFor(modelItem => item.Id)
                                     </td>
                                     <td>
@@ -98,7 +106,7 @@
                     <table id="TableManutencao4" class="table table-striped">
                         <thead>
                             <tr>
-                                <th>
+                                <th hidden>
                                     @Html.DisplayNameFor(model => model.oProduto.Id)
                                 </th>
                                 <th>
@@ -119,7 +127,7 @@
                             @foreach (var item in Model.oListProduto)
                             {
                                 <tr onclick="passIdProduto('@item.Id')">
-                                    <td>
+                                    <td hidden>
                                         @Html.DisplayFor(modelItem => item.Id)
                                     </td>
                                     <td>
@@ -201,8 +209,8 @@
                         "sSortDescending": ": Ordenar colunas de forma descendente"
                     }
                 },
-                //"lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
-                //"pageLength": 5
+                "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
+                "pageLength": 5
             });
 
             $('#TableManutencao3 tbody').on('click', 'tr', function () {
@@ -214,7 +222,7 @@
                 }
             });
 
-            $('#TableManutencao3 tbody tr td').filter(":contains('" + @Model.oProdutoClienteManutencao.IdCliente +"')")[0].parentElement.setAttribute('class', 'selected');
+            //$('#TableManutencao3 tbody tr td').filter(":contains('" + @Model.oProdutoClienteManutencao.IdCliente +"')")[0].parentElement.setAttribute('class', 'selected');
 
         });
 
@@ -247,8 +255,8 @@
                         "sSortDescending": ": Ordenar colunas de forma descendente"
                     }
                 },
-                //"lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
-                //"pageLength": 5
+                "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
+                "pageLength": 5
             });
 
             $('#TableManutencao4 tbody').on('click', 'tr', function () {
@@ -260,7 +268,7 @@
                 }
             });
 
-            $('#TableManutencao4 tbody tr td').filter(":contains('" + @Model.oProdutoClienteManutencao.IdProduto +"')")[0].parentElement.setAttribute('class', 'selected');
+            //$('#TableManutencao4 tbody tr td').filter(":contains('" + @Model.oProdutoClienteManutencao.IdProduto +"')")[0].parentElement.setAttribute('class', 'selected');
 
         });
 
