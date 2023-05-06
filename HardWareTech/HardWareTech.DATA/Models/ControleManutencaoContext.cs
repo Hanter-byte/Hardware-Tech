@@ -61,8 +61,13 @@ namespace HardWareTech.DATA.Models
                 entity.HasOne(d => d.IdProdutoNavigation)
                     .WithMany(p => p.ProdutoClienteManutencao)
                     .HasForeignKey(d => d.IdProduto)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Produto_Cliente_Manutencao_Produto");
+
+                entity.HasOne(d => d.IdServicoNavigation)
+                    .WithMany(p => p.ProdutoClienteManutencao)
+                    .HasForeignKey(d => d.IdServico)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Produto_Cliente_Manutencao_Servico");
             });
 
             modelBuilder.Entity<VwProdutoClienteManutencao>(entity =>

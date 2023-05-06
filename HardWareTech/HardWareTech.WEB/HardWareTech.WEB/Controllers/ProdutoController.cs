@@ -7,8 +7,16 @@ namespace HardWareTech.WEB.Controllers
 {
     public class ProdutoController : Controller
     {
-        private ProdutoService oProdutoService = new();
-        private CategoriaService oCategoriaService = new();
+        //private ProdutoService oProdutoService = new();
+        //private CategoriaService oCategoriaService = new();
+        private readonly ProdutoService oProdutoService;
+        private readonly CategoriaService oCategoriaService;
+
+        public ProdutoController()
+        {
+            oProdutoService = new ProdutoService();
+            oCategoriaService= new CategoriaService();
+        }
         public IActionResult Index()
         {
             List<Produto> oListProduto = oProdutoService.oRepositoryProduto.SelecionarTodos();

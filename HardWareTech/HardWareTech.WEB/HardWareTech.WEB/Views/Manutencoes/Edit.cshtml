@@ -21,6 +21,9 @@
             <div hidden class="form-group">
                 <input id="idProduto" asp-for="oProdutoClienteManutencao.IdProduto" class="form-control" />
             </div>
+            <div hidden class="form-group">
+                <input id="idServico" asp-for="oProdutoClienteManutencao.IdServico" class="form-control" />
+            </div>
 
             <div class="card">
                 <div class="card-header">Datas</div>
@@ -28,7 +31,7 @@
                     <div class="col-md">
                         <div class="form-group">
                             <label asp-for="oProdutoClienteManutencao.NomeManutencao" class="control-label"></label>
-                            <input asp-for="oProdutoClienteManutencao.NomeManutencao" class="form-control"  />
+                            <input asp-for="oProdutoClienteManutencao.NomeManutencao" class="form-control" />
                             <span asp-validation-for="oProdutoClienteManutencao.NomeManutencao" class="text-danger"></span>
                         </div>
                     </div>
@@ -41,7 +44,7 @@
                     </div>
                     <div class="col-md">
                         <div class="form-check">
-                            <input asp-for="oProdutoClienteManutencao.Feito" class="form-check-input" type="checkbox" id="flexCheckDefault">
+                            <input asp-for="oProdutoClienteManutencao.Feito" class="form-check-input" type="checkbox" id="flexCheckDefault" />
                             <label class="form-check-label" for="flexCheckDefault">
                                 Feito
                             </label>
@@ -150,6 +153,43 @@
             </div>
             <br />
             <div class="card">
+                <div class="card-header">Serviço</div>
+                <div class="card-body">
+                    <table id="TableManutencao5" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th hidden>
+                                    @Html.DisplayNameFor(model => model.oServico.Id)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.oServico.NomeServico)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.oServico.Preco)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.oListServico)
+                            {
+                                <tr onclick="passIdServico('@item.Id')">
+                                    <td hidden>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NomeServico)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Preco)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br />
+            <div class="card">
                 <div class="card-header">Datas</div>
                 <div class="card-body row">
                     <div class="col-md">
@@ -181,104 +221,159 @@
 @section scripts {
     <script>
         $(document).ready(function () {
-            var TableManutencao3 = $('#TableManutencao3').DataTable({
-                "ordering": true,
-                "paging": true,
-                "autoWidth": true,
-                "searching": true,
-                "oLanguage": {
-                    "sEmptyTable": "Nenhum registro encontrado na tabela",
-                    "sInfo": "Mostrar _START_ até _END_ de _TOTAL_ registros",
-                    "sInfoEmpty": "Mostrar 0 até 0 de 0 Registros",
-                    "sInfoFiltered": "(Filtrar de _MAX_ total registros)",
-                    "sInfoPostFix": "",
-                    "sInfoThousands": ".",
-                    "sLengthMenu": "Mostrar _MENU_ registros por pagina",
-                    "sLoadingRecords": "Carregando...",
-                    "sProcessing": "Processando...",
-                    "sZeroRecords": "Nenhum registro encontrado",
-                    "sSearch": "Pesquisar",
-                    "oPaginate": {
-                        "sNext": "Proximo",
-                        "sPrevious": "Anterior",
-                        "sFirst": "Primeiro",
-                        "sLast": "Ultimo"
+            var TableManutencao3 = $("#TableManutencao3").DataTable({
+                ordering: true,
+                paging: true,
+                autoWidth: true,
+                searching: true,
+                oLanguage: {
+                    sEmptyTable: "Nenhum registro encontrado na tabela",
+                    sInfo: "Mostrar _START_ até _END_ de _TOTAL_ registros",
+                    sInfoEmpty: "Mostrar 0 até 0 de 0 Registros",
+                    sInfoFiltered: "(Filtrar de _MAX_ total registros)",
+                    sInfoPostFix: "",
+                    sInfoThousands: ".",
+                    sLengthMenu: "Mostrar _MENU_ registros por pagina",
+                    sLoadingRecords: "Carregando...",
+                    sProcessing: "Processando...",
+                    sZeroRecords: "Nenhum registro encontrado",
+                    sSearch: "Pesquisar",
+                    oPaginate: {
+                        sNext: "Proximo",
+                        sPrevious: "Anterior",
+                        sFirst: "Primeiro",
+                        sLast: "Ultimo",
                     },
-                    "oAria": {
-                        "sSortAscending": ": Ordenar colunas de forma ascendente",
-                        "sSortDescending": ": Ordenar colunas de forma descendente"
-                    }
+                    oAria: {
+                        sSortAscending: ": Ordenar colunas de forma ascendente",
+                        sSortDescending: ": Ordenar colunas de forma descendente",
+                    },
                 },
-                "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
-                "pageLength": 5
+                lengthMenu: [
+                    [5, 10, 25, 50],
+                    [5, 10, 25, 50],
+                ],
+                pageLength: 5,
             });
 
-            $('#TableManutencao3 tbody').on('click', 'tr', function () {
-                if ($(this).hasClass('selected')) {
-                    $(this).removeClass('selected');
+            $("#TableManutencao3 tbody").on("click", "tr", function () {
+                if ($(this).hasClass("selected")) {
+                    $(this).removeClass("selected");
                 } else {
-                    TableManutencao3.$('tr.selected').removeClass('selected');
-                    $(this).addClass('selected');
+                    TableManutencao3.$("tr.selected").removeClass("selected");
+                    $(this).addClass("selected");
                 }
             });
 
             //$('#TableManutencao3 tbody tr td').filter(":contains('" + @Model.oProdutoClienteManutencao.IdCliente +"')")[0].parentElement.setAttribute('class', 'selected');
-
         });
 
         $(document).ready(function () {
-            var TableManutencao4 = $('#TableManutencao4').DataTable({
-                "ordering": true,
-                "paging": true,
-                "autoWidth": true,
-                "searching": true,
-                "oLanguage": {
-                    "sEmptyTable": "Nenhum registro encontrado na tabela",
-                    "sInfo": "Mostrar _START_ até _END_ de _TOTAL_ registros",
-                    "sInfoEmpty": "Mostrar 0 até 0 de 0 Registros",
-                    "sInfoFiltered": "(Filtrar de _MAX_ total registros)",
-                    "sInfoPostFix": "",
-                    "sInfoThousands": ".",
-                    "sLengthMenu": "Mostrar _MENU_ registros por pagina",
-                    "sLoadingRecords": "Carregando...",
-                    "sProcessing": "Processando...",
-                    "sZeroRecords": "Nenhum registro encontrado",
-                    "sSearch": "Pesquisar",
-                    "oPaginate": {
-                        "sNext": "Proximo",
-                        "sPrevious": "Anterior",
-                        "sFirst": "Primeiro",
-                        "sLast": "Ultimo"
+            var TableManutencao5 = $("#TableManutencao5").DataTable({
+                ordering: true,
+                paging: true,
+                autoWidth: true,
+                searching: true,
+                oLanguage: {
+                    sEmptyTable: "Nenhum registro encontrado na tabela",
+                    sInfo: "Mostrar _START_ até _END_ de _TOTAL_ registros",
+                    sInfoEmpty: "Mostrar 0 até 0 de 0 Registros",
+                    sInfoFiltered: "(Filtrar de _MAX_ total registros)",
+                    sInfoPostFix: "",
+                    sInfoThousands: ".",
+                    sLengthMenu: "Mostrar _MENU_ registros por pagina",
+                    sLoadingRecords: "Carregando...",
+                    sProcessing: "Processando...",
+                    sZeroRecords: "Nenhum registro encontrado",
+                    sSearch: "Pesquisar",
+                    oPaginate: {
+                        sNext: "Proximo",
+                        sPrevious: "Anterior",
+                        sFirst: "Primeiro",
+                        sLast: "Ultimo",
                     },
-                    "oAria": {
-                        "sSortAscending": ": Ordenar colunas de forma ascendente",
-                        "sSortDescending": ": Ordenar colunas de forma descendente"
-                    }
+                    oAria: {
+                        sSortAscending: ": Ordenar colunas de forma ascendente",
+                        sSortDescending: ": Ordenar colunas de forma descendente",
+                    },
                 },
-                "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
-                "pageLength": 5
+                lengthMenu: [
+                    [5, 10, 25, 50],
+                    [5, 10, 25, 50],
+                ],
+                pageLength: 5,
             });
 
-            $('#TableManutencao4 tbody').on('click', 'tr', function () {
-                if ($(this).hasClass('selected')) {
-                    $(this).removeClass('selected');
+            $("#TableManutencao5 tbody").on("click", "tr", function () {
+                if ($(this).hasClass("selected")) {
+                    $(this).removeClass("selected");
                 } else {
-                    TableManutencao4.$('tr.selected').removeClass('selected');
-                    $(this).addClass('selected');
+                    TableManutencao5.$("tr.selected").removeClass("selected");
+                    $(this).addClass("selected");
+                }
+            });
+
+            //$('#TableManutencao3 tbody tr td').filter(":contains('" + @Model.oProdutoClienteManutencao.IdCliente +"')")[0].parentElement.setAttribute('class', 'selected');
+        });
+
+        $(document).ready(function () {
+            var TableManutencao4 = $("#TableManutencao4").DataTable({
+                ordering: true,
+                paging: true,
+                autoWidth: true,
+                searching: true,
+                oLanguage: {
+                    sEmptyTable: "Nenhum registro encontrado na tabela",
+                    sInfo: "Mostrar _START_ até _END_ de _TOTAL_ registros",
+                    sInfoEmpty: "Mostrar 0 até 0 de 0 Registros",
+                    sInfoFiltered: "(Filtrar de _MAX_ total registros)",
+                    sInfoPostFix: "",
+                    sInfoThousands: ".",
+                    sLengthMenu: "Mostrar _MENU_ registros por pagina",
+                    sLoadingRecords: "Carregando...",
+                    sProcessing: "Processando...",
+                    sZeroRecords: "Nenhum registro encontrado",
+                    sSearch: "Pesquisar",
+                    oPaginate: {
+                        sNext: "Proximo",
+                        sPrevious: "Anterior",
+                        sFirst: "Primeiro",
+                        sLast: "Ultimo",
+                    },
+                    oAria: {
+                        sSortAscending: ": Ordenar colunas de forma ascendente",
+                        sSortDescending: ": Ordenar colunas de forma descendente",
+                    },
+                },
+                lengthMenu: [
+                    [5, 10, 25, 50],
+                    [5, 10, 25, 50],
+                ],
+                pageLength: 5,
+            });
+
+            $("#TableManutencao4 tbody").on("click", "tr", function () {
+                if ($(this).hasClass("selected")) {
+                    $(this).removeClass("selected");
+                } else {
+                    TableManutencao4.$("tr.selected").removeClass("selected");
+                    $(this).addClass("selected");
                 }
             });
 
             //$('#TableManutencao4 tbody tr td').filter(":contains('" + @Model.oProdutoClienteManutencao.IdProduto +"')")[0].parentElement.setAttribute('class', 'selected');
-
         });
 
         function passIdCliente(idCliente) {
-            document.getElementById('idCliente').value = idCliente;
+            document.getElementById("idCliente").value = idCliente;
         }
 
         function passIdProduto(idProduto) {
-            document.getElementById('idProduto').value = idProduto;
+            document.getElementById("idProduto").value = idProduto;
         }
 
+        function passIdServico(idServico) {
+            document.getElementById("idServico").value = idServico;
+        }
     </script>
 }

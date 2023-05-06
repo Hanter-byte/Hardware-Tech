@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jQ+1U+DAawFcZZc/4wW5OUrJSc7QkhYS3RwfOI3H8D8=",
+  "Hash": "ubsEmgplLdrj2RZdK/bDXWyHbjyL9t3ocQKEE9fsv3Q=",
   "Source": "HardWareTech.WEB",
   "BasePath": "_content/HardWareTech.WEB",
   "Mode": "Default",
@@ -117,6 +117,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\img\\apenaslogo.png",
+      "SourceId": "HardWareTech.WEB",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\",
+      "BasePath": "_content/HardWareTech.WEB",
+      "RelativePath": "img/apenaslogo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\apenaslogo.png"
+    },
+    {
+      "Identity": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\img\\logo.png",
+      "SourceId": "HardWareTech.WEB",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\",
+      "BasePath": "_content/HardWareTech.WEB",
+      "RelativePath": "img/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo.png"
     },
     {
       "Identity": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\js\\all.min.js",

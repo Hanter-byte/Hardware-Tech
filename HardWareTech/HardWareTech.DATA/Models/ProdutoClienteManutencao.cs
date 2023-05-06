@@ -17,7 +17,7 @@ namespace HardWareTech.DATA.Models
         [Column("idCliente")]
         public int IdCliente { get; set; }
         [Column("idProduto")]
-        public int IdProduto { get; set; }
+        public int? IdProduto { get; set; }
         [Column("dataCadastro", TypeName = "datetime")]
         public DateTime DataCadastro { get; set; }
         [Column("dataFinalizacao", TypeName = "datetime")]
@@ -33,6 +33,8 @@ namespace HardWareTech.DATA.Models
         [StringLength(100)]
         [Unicode(false)]
         public string Descricao { get; set; }
+        [Column("idServico")]
+        public int IdServico { get; set; }
 
         [ForeignKey("IdCliente")]
         [InverseProperty("ProdutoClienteManutencao")]
@@ -40,5 +42,8 @@ namespace HardWareTech.DATA.Models
         [ForeignKey("IdProduto")]
         [InverseProperty("ProdutoClienteManutencao")]
         public virtual Produto IdProdutoNavigation { get; set; }
+        [ForeignKey("IdServico")]
+        [InverseProperty("ProdutoClienteManutencao")]
+        public virtual Servico IdServicoNavigation { get; set; }
     }
 }

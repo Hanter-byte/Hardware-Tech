@@ -6,7 +6,14 @@ namespace HardWareTech.WEB.Controllers
 {
     public class ServicoController : Controller
     {
-        private ServicoService oServicoService = new ServicoService();
+        //private ServicoService oServicoService = new ServicoService();
+        private ServicoService oServicoService;
+
+        public ServicoController()
+        {
+            oServicoService = new ServicoService();
+        }
+
         public IActionResult Index()
         {
             List<Servico> oListServico = oServicoService.oRepositoryServico.SelecionarTodos();
@@ -43,6 +50,7 @@ namespace HardWareTech.WEB.Controllers
             Servico oServico = oServicoService.oRepositoryServico.SelecionarPk(id);
             return View(oServico);
         }
+
         [HttpPost]
         public IActionResult Edit(Servico model)
         {

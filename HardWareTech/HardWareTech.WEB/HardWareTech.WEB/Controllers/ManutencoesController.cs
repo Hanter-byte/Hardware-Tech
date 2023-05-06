@@ -10,7 +10,13 @@ namespace HardWareTech.WEB.Controllers
 {
     public class ManutencoesController : Controller
     {
-        private readonly VwProdutoClienteManutencaoService _Service = new();
+        //private readonly VwProdutoClienteManutencaoService _Service = new();
+        private readonly VwProdutoClienteManutencaoService _Service;
+
+        public ManutencoesController()
+        {
+            _Service = new VwProdutoClienteManutencaoService();
+        }
         public IActionResult Index()
         {
             List<VwProdutoClienteManutencao> oVwProdutoClienteManutencao = _Service.oRepositoryVwProdutoClienteManutencao.SelecionarTodos();
@@ -22,9 +28,11 @@ namespace HardWareTech.WEB.Controllers
             ManutencaoViewModel oManutencaoViewModel = new();
             List<Cliente> oListCliente = _Service.oRepositoryCliente.SelecionarTodos();
             List<Produto> oListProduto = _Service.oRepositoryProduto.SelecionarTodos();
+            List<Servico> oListServico = _Service.oRepositoryServico.SelecionarTodos();
 
             oManutencaoViewModel.oListeCliente = oListCliente;
             oManutencaoViewModel.oListProduto = oListProduto;
+            oManutencaoViewModel.oListServico = oListServico;
             oManutencaoViewModel.dataCadastro = DateTime.Now.Date;
             oManutencaoViewModel.dataEntrega = DateTime.Now.Date.AddDays(7);
 
@@ -44,8 +52,14 @@ namespace HardWareTech.WEB.Controllers
                     DataFinalizacao = viewModel.dataEntrega,
                     IdProduto = viewModel.idProduto,
                     IdCliente = viewModel.idCliente,
+                    IdServico = viewModel.idServico,
                     Feito = false
                 };
+
+                if(manutencao.IdProduto == 0)
+                {
+                    manutencao.IdProduto = null;
+                }
 
                 if (manutencao.DataFinalizacao < manutencao.DataCadastro)
                 {
@@ -70,6 +84,7 @@ namespace HardWareTech.WEB.Controllers
             ManutencaoViewModel oManutencaoViewModel = new();
             oManutencaoViewModel.oListeCliente = _Service.oRepositoryCliente.SelecionarTodos();
             oManutencaoViewModel.oListProduto = _Service.oRepositoryProduto.SelecionarTodos();
+            oManutencaoViewModel.oListServico = _Service.oRepositoryServico.SelecionarTodos();
 
             ProdutoClienteManutencao oProdutoClienteManutencao = _Service.oRepositoryProdutoClienteManutencao.SelecionarPk(id);
             oManutencaoViewModel.oProdutoClienteManutencao = oProdutoClienteManutencao;
@@ -84,6 +99,7 @@ namespace HardWareTech.WEB.Controllers
             {
                 oManutencaoViewModel.oListeCliente = _Service.oRepositoryCliente.SelecionarTodos();
                 oManutencaoViewModel.oListProduto = _Service.oRepositoryProduto.SelecionarTodos();
+                oManutencaoViewModel.oListServico = _Service.oRepositoryServico.SelecionarTodos();
                return View(oManutencaoViewModel);
             }
             _Service.oRepositoryProdutoClienteManutencao.Alterar(oManutencaoViewModel.oProdutoClienteManutencao);
@@ -99,7 +115,7 @@ namespace HardWareTech.WEB.Controllers
                 TempData["MensagemSucesso"] = $"Manutenção excluida com sucesso!";
                 return RedirectToAction("index");
             }
-            catch (System.Exception erro)
+            catch (Exception erro)
             {
                 TempData["MensagemErro"] = $"Ops, não conseguimos excluir sua manutenção, tente novamente, detalhe do erro: {erro.Message} ";
                 return RedirectToAction("Index");

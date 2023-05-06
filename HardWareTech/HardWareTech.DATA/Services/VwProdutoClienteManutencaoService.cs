@@ -15,6 +15,7 @@ namespace HardWareTech.DATA.Services
         public RepositoryProduto oRepositoryProduto { get; set; }
         public RepositoryProdutoClienteManutencao oRepositoryProdutoClienteManutencao { get; set; }
         public RepositoryCategoria oRepositoryCategoria { get; set; }
+        public RepositoryServico oRepositoryServico { get; set; }
         public VwProdutoClienteManutencaoService()
         {
             oRepositoryVwProdutoClienteManutencao = new();
@@ -22,6 +23,7 @@ namespace HardWareTech.DATA.Services
             oRepositoryProduto = new();
             oRepositoryProdutoClienteManutencao = new();
             oRepositoryCategoria = new();
+            oRepositoryServico = new();
         }
     }
 }

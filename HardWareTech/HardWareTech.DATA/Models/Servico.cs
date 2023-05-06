@@ -10,6 +10,11 @@ namespace HardWareTech.DATA.Models
 {
     public partial class Servico
     {
+        public Servico()
+        {
+            ProdutoClienteManutencao = new HashSet<ProdutoClienteManutencao>();
+        }
+
         [Key]
         [Column("id")]
         public int Id { get; set; }
@@ -25,5 +30,8 @@ namespace HardWareTech.DATA.Models
         public string Descricao { get; set; }
         [Column("preco", TypeName = "decimal(10, 2)")]
         public decimal Preco { get; set; }
+
+        [InverseProperty("IdServicoNavigation")]
+        public virtual ICollection<ProdutoClienteManutencao> ProdutoClienteManutencao { get; set; }
     }
 }

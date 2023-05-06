@@ -6,7 +6,14 @@ namespace HardWareTech.WEB.Controllers
 {
     public class CategoriaController : Controller
     {
-        private CategoriaService oCategoriaService = new CategoriaService();
+        //private CategoriaService oCategoriaService = new CategoriaService();
+        private CategoriaService oCategoriaService;
+
+        public CategoriaController() 
+        {
+            oCategoriaService = new CategoriaService();
+        }
+
         public IActionResult Index()
         {
             List<Categoria> oListCategoria = oCategoriaService.oRepositoryCategoria.SelecionarTodos();

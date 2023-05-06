@@ -40,6 +40,5 @@ namespace HardWareTech.DATA.Models
         {
             return Senha == senha;
         }
-
     }
 }

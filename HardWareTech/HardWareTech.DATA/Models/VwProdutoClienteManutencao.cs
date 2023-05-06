@@ -46,5 +46,12 @@ namespace HardWareTech.DATA.Models
         [StringLength(100)]
         [Unicode(false)]
         public string Descricao { get; set; }
+        [Column("idServico")]
+        public int? IdServico { get; set; }
+        [Required]
+        [Column("nome_servico")]
+        [StringLength(50)]
+        [Unicode(false)]
+        public string NomeServico { get; set; }
     }
 }

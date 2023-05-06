@@ -7,7 +7,7 @@ namespace HardWareTech.WEB.Controllers
     public class ClienteController : Controller
     {
 
-        private ClienteService oClienteService = new();
+        private ClienteService oClienteService;// = new();
 
         public ClienteController()
         {
@@ -71,6 +71,13 @@ namespace HardWareTech.WEB.Controllers
         {
             try
             {
+                var cliente = new Cliente();
+                if (!cliente.ValidarCPF(model.Cpf))
+                {
+                    TempData["MensagemErro"] = $"CPF inválido!";
+                    return RedirectToAction("Index");
+                }
+
                 Cliente oCliente = oClienteService.oRepositoryCliente.Alterar(model);
                 int id = oCliente.Id;
                 TempData["MensagemSucesso"] = $"Cliente alterado com sucesso!";

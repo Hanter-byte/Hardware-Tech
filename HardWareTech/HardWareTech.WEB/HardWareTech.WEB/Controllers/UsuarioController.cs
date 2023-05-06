@@ -6,7 +6,14 @@ namespace HardWareTech.WEB.Controllers
 {
     public class UsuarioController : Controller
     {
-        private UsuarioService oUsuarioService= new UsuarioService();
+        //private UsuarioService oUsuarioService= new UsuarioService();
+        private UsuarioService oUsuarioService;
+
+        public UsuarioController()
+        {
+            oUsuarioService= new UsuarioService();
+        }
+
         public IActionResult Index()
         {
             List<Usuario> oListUsuario = oUsuarioService.oRepositoryUsuario.SelecionarTodos();

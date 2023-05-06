@@ -7,7 +7,8 @@ namespace HardWareTech.WEB.Controllers
 {
     public class LoginController : Controller
     {
-        private UsuarioService oUsuarioService= new();
+        //private UsuarioService oUsuarioService= new();
+        private UsuarioService oUsuarioService;
 
         public LoginController()
         {
