@@ -7,11 +7,11 @@ namespace HardWareTech.WEB.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly VwProdutoClienteManutencaoService ovwProdutoClienteManutencaoService = new();
+        private readonly VwProdutoClienteManutencaoService ovwProdutoClienteManutencaoService;
        
         public HomeController()
         {
-            
+            ovwProdutoClienteManutencaoService = new VwProdutoClienteManutencaoService();
         }
 
         public IActionResult Index()
