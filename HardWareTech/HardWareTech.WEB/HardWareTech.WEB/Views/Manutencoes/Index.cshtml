@@ -33,7 +33,7 @@
             (DateTime.Now.Date.Equals(item.DataFinalizacao)) { styleStatus = "bg-warning"; }
 
                 <p class="task " draggable="true" onclick="location.href='@Url.Action("Edit", new { id = item.Id })'">
-                    @item.NomeManutencao <br /> @item.NomeCliente - @item.DataFinalizacao.ToString("dd/MM/yyyy")
+                    @item.NomeManutencao - <br /> @item.NomeCliente - @item.DataFinalizacao.ToString("dd/MM/yyyy")
                 </p>
 
             }

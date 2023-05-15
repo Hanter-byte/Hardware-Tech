@@ -85,77 +85,83 @@
                 </div>
             </div>
             <br />
-            <div class="card">
-                <div class="card-header">Produto</div>
-                <div class="card-body">
-                    <table id="TableManutencao2" class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oProduto.NomeProduto)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oProduto.Marca)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oProduto.Preco)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oProduto.Estoque)
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model.oListProduto)
-                            {
-                                <tr onclick="passIdLivro('@item.Id')">
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.NomeProduto)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Marca)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Preco)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Estoque)
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">Produto</div>
+                        <div class="card-body">
+                            <table id="TableManutencao2" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.oProduto.NomeProduto)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.oProduto.Marca)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.oProduto.Preco)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.oProduto.Estoque)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.oListProduto)
+                                    {
+                                        <tr onclick="passIdLivro('@item.Id')">
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.NomeProduto)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Marca)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Preco)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Estoque)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <br />
-            <div class="card">
-                <div class="card-header">Servico</div>
-                <div class="card-body">
-                    <table id="TableManutencao3" class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oServico.NomeServico)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.oServico.Preco)
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model.oListServico)
-                            {
-                                <tr onclick="passIdServico('@item.Id')">
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.NomeServico)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Preco)
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
+                <br />
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">Serviço</div>
+                        <div class="card-body">
+                            <table id="TableManutencao3" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.oServico.NomeServico)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.oServico.Preco)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.oListServico)
+                                    {
+                                        <tr onclick="passIdServico('@item.Id')">
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.NomeServico)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Preco)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
             <br />
