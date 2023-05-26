@@ -118,7 +118,7 @@
                                                 @Html.DisplayFor(modelItem => item.Marca)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.Preco)
+                                               R$ @Html.DisplayFor(modelItem => item.Preco)
                                             </td>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.Estoque)
@@ -154,7 +154,7 @@
                                                 @Html.DisplayFor(modelItem => item.NomeServico)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.Preco)
+                                              R$  @Html.DisplayFor(modelItem => item.Preco)
                                             </td>
                                         </tr>
                                     }
@@ -201,6 +201,8 @@
                 ordering: true,
                 paging: true,
                 autoWidth: true,
+                //scrollY: '200px',
+                //scrollCollapse: true,
                 searching: true,
                 oLanguage: {
                     sEmptyTable: "Nenhum registro encontrado na tabela",
@@ -246,6 +248,8 @@
             var TableManutencao2 = $("#TableManutencao2").DataTable({
                 ordering: true,
                 paging: true,
+                scrollY: '200px',
+                scrollCollapse: true,
                 autoWidth: true,
                 searching: true,
                 oLanguage: {
@@ -293,6 +297,8 @@
                 ordering: true,
                 paging: true,
                 autoWidth: true,
+                scrollY: '200px',
+                scrollCollapse: true,
                 searching: true,
                 oLanguage: {
                     sEmptyTable: "Nenhum registro encontrado na tabela",

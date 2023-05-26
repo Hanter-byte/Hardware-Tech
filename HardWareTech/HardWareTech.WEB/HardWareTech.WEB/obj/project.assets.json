@@ -69,6 +69,22 @@
           }
         }
       },
+      "FastReport.Data.MsSql/2023.2.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Data.SqlClient": "4.4.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "build": {
+          "buildTransitive/netstandard2.0/FastReport.Data.MsSql.props": {},
+          "buildTransitive/netstandard2.0/FastReport.Data.MsSql.targets": {}
+        }
+      },
       "FastReport.OpenSource/2023.2.7": {
         "type": "package",
         "dependencies": {
@@ -93,19 +109,6 @@
         },
         "buildMultiTargeting": {
           "buildMultiTargeting/FastReport.OpenSource.props": {}
-        }
-      },
-      "FastReport.OpenSource.Data.MsSql/2021.4.0": {
-        "type": "package",
-        "dependencies": {
-          "FastReport.OpenSource": "2021.4.0",
-          "System.Data.SqlClient": "4.4.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/FastReport.Data.MsSql.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/FastReport.Data.MsSql.dll": {}
         }
       },
       "FastReport.OpenSource.Export.PdfSimple/2023.2.7": {
@@ -4300,6 +4303,35 @@
         "runtimes/any/lib/netcoreapp3.0/FastReport.Compat.dll"
       ]
     },
+    "FastReport.Data.MsSql/2023.2.0": {
+      "sha512": "IVV4sWHM5OaYRsBhejcaaj6yUdDzAjQx8ce1cC7w6IoMWI+18VxEftlMYHQjxB22hG6n1Nf+99ZgX3HcaaNDqw==",
+      "type": "package",
+      "path": "fastreport.data.mssql/2023.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "FastReport .NET-license.md",
+        "build/net462/FastReport.Core/FastReport.Data.MsSql.dll",
+        "build/net462/FastReport.Data.MsSql.props",
+        "build/net462/FastReport.Data.MsSql.targets",
+        "build/net462/FastReport.OpenSource/FastReport.Data.MsSql.dll",
+        "build/net462/ImportConnector.targets",
+        "build/netstandard2.0/FastReport.Core/FastReport.Data.MsSql.dll",
+        "build/netstandard2.0/FastReport.Data.MsSql.props",
+        "build/netstandard2.0/FastReport.Data.MsSql.targets",
+        "build/netstandard2.0/FastReport.OpenSource/FastReport.Data.MsSql.dll",
+        "build/netstandard2.0/ImportConnector.targets",
+        "buildTransitive/net462/FastReport.Data.MsSql.props",
+        "buildTransitive/net462/FastReport.Data.MsSql.targets",
+        "buildTransitive/netstandard2.0/FastReport.Data.MsSql.props",
+        "buildTransitive/netstandard2.0/FastReport.Data.MsSql.targets",
+        "fastreport.data.mssql.2023.2.0.nupkg.sha512",
+        "fastreport.data.mssql.nuspec",
+        "frlogo192.png",
+        "lib/net462/_._",
+        "lib/netstandard2.0/_._"
+      ]
+    },
     "FastReport.OpenSource/2023.2.7": {
       "sha512": "efclpEGasDJmIwzVIf/D9DVtODIQGEVVfluMp77nMKGQ3Pj5WT7bq20ozM+ivdQOeAA2XLO+7E3BbgISfrObYQ==",
       "type": "package",
@@ -4320,19 +4352,6 @@
         "lib/netstandard2.0/FastReport.xml",
         "lib/netstandard2.1/FastReport.dll",
         "lib/netstandard2.1/FastReport.xml"
-      ]
-    },
-    "FastReport.OpenSource.Data.MsSql/2021.4.0": {
-      "sha512": "m2L9FcuHr+cb9pahVJorWhYok+nWxssW8Wq6kiSC3RDB97i+EE4eA+naBHc5Y+t6oVXqMNRgfzt3tGEiyFdTJQ==",
-      "type": "package",
-      "path": "fastreport.opensource.data.mssql/2021.4.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "fastreport.opensource.data.mssql.2021.4.0.nupkg.sha512",
-        "fastreport.opensource.data.mssql.nuspec",
-        "lib/net452/FastReport.Data.MsSql.dll",
-        "lib/netstandard2.0/FastReport.Data.MsSql.dll"
       ]
     },
     "FastReport.OpenSource.Export.PdfSimple/2023.2.7": {
@@ -11539,8 +11558,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "FastReport.Data.MsSql >= 2023.2.0",
       "FastReport.OpenSource >= 2023.2.7",
-      "FastReport.OpenSource.Data.MsSql >= 2021.4.0",
       "FastReport.OpenSource.Export.PdfSimple >= 2023.2.7",
       "FastReport.OpenSource.Web >= 2023.2.7",
       "HardWareTech.DATA >= 1.0.0",
@@ -11600,13 +11619,13 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "FastReport.Data.MsSql": {
+            "target": "Package",
+            "version": "[2023.2.0, )"
+          },
           "FastReport.OpenSource": {
             "target": "Package",
             "version": "[2023.2.7, )"
-          },
-          "FastReport.OpenSource.Data.MsSql": {
-            "target": "Package",
-            "version": "[2021.4.0, )"
           },
           "FastReport.OpenSource.Export.PdfSimple": {
             "target": "Package",

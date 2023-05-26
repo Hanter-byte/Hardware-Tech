@@ -21,18 +21,17 @@
     </div>
 }
 
-
 <div class="board">
     <div class="lanes">
         <div class="swim-lane" id="todo-lane">
             <h3 class="heading">Pendente</h3>
             @foreach (var item in Model.Where(x => x.Feito == false))
             {
-                var styleStatus = "rounded text-white bg-success"; if (DateTime.Now.Date > item.DataFinalizacao) { styleStatus = "rounded text-white bg-danger"; }
+                var styleStatus = "rounded text-black bg-white"; if (DateTime.Now.Date > item.DataFinalizacao) { styleStatus = "rounded text-white bg-danger"; }
                 else if
             (DateTime.Now.Date.Equals(item.DataFinalizacao)) { styleStatus = "bg-warning"; }
 
-                <p class="task " draggable="true" onclick="location.href='@Url.Action("Edit", new { id = item.Id })'">
+                <p class="task @styleStatus " draggable="true" onclick="location.href='@Url.Action("Edit", new { id = item.Id })'">
                     @item.NomeManutencao - <br /> @item.NomeCliente - @item.DataFinalizacao.ToString("dd/MM/yyyy")
                 </p>
 
@@ -63,24 +62,25 @@
             }
         </div>*@
 
+        @{
+            var currentMonth = DateTime.Now.Month;
+            var currentYear = DateTime.Now.Year;
+        }
+
         <div class="swim-lane">
             <h3 class="heading">Feito</h3>
-            @foreach (var item in Model.Where(x => x.Feito == true))
+            @foreach (var item in Model.Where(x => x.Feito == true && x.DataFinalizacao.Year == currentYear && x.DataFinalizacao.Month == currentMonth))
             {
-                var styleStatus = "rounded text-white bg-success"; if (DateTime.Now.Date > item.DataFinalizacao) { styleStatus = "rounded text-white bg-danger"; }
+                var styleStatus = "rounded text-white bg-success";@* if (DateTime.Now.Date > item.DataFinalizacao & item.Feito != true) { styleStatus = "rounded text-white bg-danger"; }
                 else if
-            (DateTime.Now.Date.Equals(item.DataFinalizacao)) { styleStatus = "bg-warning"; }
-
+            (DateTime.Now.Date.Equals(item.DataFinalizacao) & (item.Feito != true)) { styleStatus = "bg-warning"; }*@
                 <p class="task @styleStatus" draggable="true" onclick="location.href='@Url.Action("Edit", new { id = item.Id })'">
                     @item.NomeManutencao <br /> @item.NomeCliente - @item.DataFinalizacao.ToString("dd/MM/yyyy")
                 </p>
-
             }
         </div>
     </div>
 </div>
-
-
 
 @*<table id="myTable" class="table table-striped">
     <thead>

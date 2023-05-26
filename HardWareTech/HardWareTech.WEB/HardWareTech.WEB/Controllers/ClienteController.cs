@@ -39,7 +39,7 @@ namespace HardWareTech.WEB.Controllers
                 if (!cliente.ValidarCPF(model.Cpf))
                 {
                     TempData["MensagemErro"] = $"CPF inválido!";
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Create");
                 }
 
                 oClienteService.oRepositoryCliente.Incluir(model);
@@ -75,7 +75,7 @@ namespace HardWareTech.WEB.Controllers
                 if (!cliente.ValidarCPF(model.Cpf))
                 {
                     TempData["MensagemErro"] = $"CPF inválido!";
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Edit");
                 }
 
                 Cliente oCliente = oClienteService.oRepositoryCliente.Alterar(model);

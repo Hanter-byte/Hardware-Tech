@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "640y4zZVxWbyU92guXAqe1nfCB8Ma6KSDVwRJVf6MBr5twoKP5JrGNU03kih6viFj+c0QpGg3hDl2jo7dL58fA==",
+  "dgSpecHash": "uBFOHM45yvqyp7o65vdqE31s4FFxvmrKJj09gAW5dl/0nQcsFndv//RxdjKL3wRwGFUygMtCu9GAprI/7bTVOg==",
   "success": true,
   "projectFilePath": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\HardWareTech.WEB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joao.psilva\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\joao.psilva\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\joao.psilva\\.nuget\\packages\\fastreport.compat\\2023.1.8\\fastreport.compat.2023.1.8.nupkg.sha512",
+    "C:\\Users\\joao.psilva\\.nuget\\packages\\fastreport.data.mssql\\2023.2.0\\fastreport.data.mssql.2023.2.0.nupkg.sha512",
     "C:\\Users\\joao.psilva\\.nuget\\packages\\fastreport.opensource\\2023.2.7\\fastreport.opensource.2023.2.7.nupkg.sha512",
-    "C:\\Users\\joao.psilva\\.nuget\\packages\\fastreport.opensource.data.mssql\\2021.4.0\\fastreport.opensource.data.mssql.2021.4.0.nupkg.sha512",
     "C:\\Users\\joao.psilva\\.nuget\\packages\\fastreport.opensource.export.pdfsimple\\2023.2.7\\fastreport.opensource.export.pdfsimple.2023.2.7.nupkg.sha512",
     "C:\\Users\\joao.psilva\\.nuget\\packages\\fastreport.opensource.web\\2023.2.7\\fastreport.opensource.web.2023.2.7.nupkg.sha512",
     "C:\\Users\\joao.psilva\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

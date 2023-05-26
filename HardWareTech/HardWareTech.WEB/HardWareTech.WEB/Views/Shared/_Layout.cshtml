@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/HardWareTech.WEB.styles.css" asp-append-version="true" />
-    <link href="https://cdn.datatables.net/v/dt/dt-1.13.3/datatables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
+    <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
     <link href="/css/all.min.css" rel="stylesheet"/>
     <link href="/css/fontawesome.min.css" rel="stylesheet" />
 </head>
@@ -72,22 +73,24 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container mt-5">
         <main role="main" class="pb-3">
             <br />
-            <br />
-            <br />
             @RenderBody()
+            <br/>
+            <br/>
+            <br/>
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">&copy; 2023 - HardWareTech @*- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@</div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="https://cdn.datatables.net/v/dt/dt-1.13.3/datatables.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
     <script src="/js/all.min.js"></script>
     <script src="/js/fontawesome.min.js"></script>
     <script src="/js/drag.js" defer></script>

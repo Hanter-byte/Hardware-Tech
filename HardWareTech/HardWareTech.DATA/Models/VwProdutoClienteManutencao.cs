@@ -11,7 +11,6 @@ namespace HardWareTech.DATA.Models
     [Keyless]
     public partial class VwProdutoClienteManutencao
     {
-        [Required]
         [Column("CPF")]
         [StringLength(14)]
         [Unicode(false)]
@@ -25,14 +24,9 @@ namespace HardWareTech.DATA.Models
         [Column("idCliente")]
         public int IdCliente { get; set; }
         [Column("idProduto")]
-        public int IdProduto { get; set; }
+        public int? IdProduto { get; set; }
         [Column("dataCadastro", TypeName = "datetime")]
         public DateTime DataCadastro { get; set; }
-        [Required]
-        [Column("nome_cliente")]
-        [StringLength(50)]
-        [Unicode(false)]
-        public string NomeCliente { get; set; }
         [Column("dataFinalizacao", TypeName = "datetime")]
         public DateTime DataFinalizacao { get; set; }
         public bool Feito { get; set; }
@@ -47,11 +41,14 @@ namespace HardWareTech.DATA.Models
         [Unicode(false)]
         public string Descricao { get; set; }
         [Column("idServico")]
-        public int? IdServico { get; set; }
-        [Required]
+        public int IdServico { get; set; }
         [Column("nome_servico")]
         [StringLength(50)]
         [Unicode(false)]
         public string NomeServico { get; set; }
+        [Column("nome_cliente")]
+        [StringLength(50)]
+        [Unicode(false)]
+        public string NomeCliente { get; set; }
     }
 }
