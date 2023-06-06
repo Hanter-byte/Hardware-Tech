@@ -577,11 +577,6 @@ C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.
 C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\HardWareTech.WEB.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\HardWareTech.WEB.RazorAssemblyInfo.cache
 C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\HardWareTech.WEB.RazorAssemblyInfo.cs
-C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\staticwebassets\msbuild.HardWareTech.WEB.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\staticwebassets\msbuild.build.HardWareTech.WEB.props
-C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.HardWareTech.WEB.props
-C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.HardWareTech.WEB.props
-C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
@@ -594,3 +589,8 @@ C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.
 C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\HardWareTech.WEB.pdb
 C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\HardWareTech.WEB.genruntimeconfig.cache
 C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\ref\HardWareTech.WEB.dll
+C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\staticwebassets\msbuild.HardWareTech.WEB.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\staticwebassets\msbuild.build.HardWareTech.WEB.props
+C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.HardWareTech.WEB.props
+C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.HardWareTech.WEB.props
+C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\obj\Debug\net6.0\staticwebassets.pack.json
