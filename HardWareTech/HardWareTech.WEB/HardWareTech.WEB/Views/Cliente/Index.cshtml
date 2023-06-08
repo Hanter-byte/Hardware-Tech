@@ -6,10 +6,18 @@
 
 <h1 class="text-center display-4">Listagem de Clientes</h1>
 
-<div class="d-gird gap-2 d-md-flex justify-content-md-start">
-    <a class="btn btn-primary" role="button" asp-controller="Cliente" asp-action="Create"><i class="fa fa-plus-circle"></i> Novo Cliente</a>
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <div>
+        <a class="btn btn-primary" role="button" asp-controller="Cliente" asp-action="Create"><i class="fa fa-plus-circle"></i> Novo Cliente</a>
+    </div>
+    <div>
+        <a class="btn btn-danger" role="button" asp-controller="Cliente" asp-action="ClientesReport" target="_blank">
+            <i class="fa-solid fa-file-pdf"></i> PDF Cliente
+        </a>
+    </div>
 </div>
 <br />
+
 
 @if (TempData["MensagemSucesso"] != null) {
 <div class="alert alert-success" role="alert" style="text-align: center;">
