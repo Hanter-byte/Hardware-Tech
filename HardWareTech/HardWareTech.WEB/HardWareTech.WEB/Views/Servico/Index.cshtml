@@ -1,9 +1,20 @@
 ﻿@model IEnumerable<HardWareTech.DATA.Models.Servico>
 
+@{
+    ViewData["Title"] = "Listagem de Serviços";
+}
+
 <h1 class="text-center display-4">Listagem de Serviços</h1>
 
-<div class="d-gird gap-2 d-md-flex justify-content-md-start">
-    <a class="btn btn-primary" role="button" asp-controller="Servico" asp-action="Create"><i class="fa fa-plus-circle"></i> Novo Serviço</a>
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <div>
+        <a class="btn btn-primary" role="button" asp-controller="Servico" asp-action="Create"><i class="fa fa-plus-circle"></i> Novo Cliente</a>
+    </div>
+    <div>
+        <a class="btn btn-danger" role="button" asp-controller="Servico" asp-action="ServicosReport" target="_blank">
+            <i class="fa-solid fa-file-pdf"></i> PDF Serviço
+        </a>
+    </div>
 </div>
 <br />
 

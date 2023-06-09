@@ -1,4 +1,5 @@
-﻿using HardWareTech.DATA.Models;
+﻿using FastReport.Export.PdfSimple;
+using HardWareTech.DATA.Models;
 using HardWareTech.DATA.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,16 +9,41 @@ namespace HardWareTech.WEB.Controllers
     {
         //private ServicoService oServicoService = new ServicoService();
         private ServicoService oServicoService;
+        public readonly IWebHostEnvironment _webHostEnv;
 
-        public ServicoController()
+        public ServicoController(IWebHostEnvironment webHostEnvironment)
         {
             oServicoService = new ServicoService();
+            _webHostEnv = webHostEnvironment;
         }
 
         public IActionResult Index()
         {
             List<Servico> oListServico = oServicoService.oRepositoryServico.SelecionarTodos();
             return View(oListServico);
+        }
+
+        [Route("ServicosReport")]
+        public IActionResult ServicosReport()
+        {
+            var caminhoReport = Path.Combine(_webHostEnv.WebRootPath, @"reports\Servico.frx");
+            var reportFile = caminhoReport;
+            var freport = new FastReport.Report();
+            var productList = oServicoService.oRepositoryServico.SelecionarTodos();
+
+            freport.Report.Load(reportFile);
+            freport.Dictionary.RegisterBusinessObject(productList, "productList", 10, true);
+            //freport.Report.Save(reportFile);
+            freport.Prepare();
+
+            var pdfExport = new PDFSimpleExport();
+
+            using MemoryStream ms = new MemoryStream();
+            pdfExport.Export(freport, ms);
+            ms.Flush();
+
+            return File(ms.ToArray(), "application/pdf");
+            //return Ok($"Relatorio gerado: {caminhoReport}");
         }
 
         public IActionResult Create()

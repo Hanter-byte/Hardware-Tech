@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="06/08/2023 10:54:02" ReportInfo.Modified="06/08/2023 10:59:16" ReportInfo.CreatorVersion="2023.2.5.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="06/08/2023 10:54:02" ReportInfo.Modified="06/09/2023 11:24:49" ReportInfo.CreatorVersion="2023.2.5.0">
   <Dictionary>
-    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq2/fJeZHfXvLgJXYAsV8U8ZFL4B3d1vFdWju5nQoc3mwQIzwp/Jyv2XMjDiafrcKnN8Rud0YToOUlFrLVl5cBvfNND960chbk/jD70KCR8TnU5v5r+XXmZ+DB9v7KUDSA5VxeDHMvHuQLUjZ+jNdUTwGJO7bX5y/pZhgPFZgk3ce0yMlor9Mefj3gLwMYTrvC6h6HBVMkTWyAWb0RA0E4xNtaXZsnaaSRJkOBOQvrgy0=">
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq2/fJeZHfXvLgJXYAsV8U8ZFL4B3d1vFdWju5nQoc3mwQIzwp/Jyv2XMjDiafrcKnN8Rud0YToOUlFrLVl5cBvfNND960chbk/jD70KCR8TnU5v5r+XXmZ+DB9v7KUDSA5VxeDHMvHuQLUjZ+jNdUTwGJO7bX5y/pZhgPFZgk3ce0yMlor9Mefj3gLwMYTrvC6h6HBVMkTWyAWb0RA0E4xC23csuxMo2CBtU4P5o05sU=">
       <TableDataSource Name="Cliente" DataType="System.Int32" Enabled="true" TableName="Cliente">
         <Column Name="id" DataType="System.Int32"/>
         <Column Name="CPF" DataType="System.String"/>
@@ -20,18 +20,18 @@
       <TextObject Name="Text36" Width="718.2" Height="28.35" Text="Listagem de Clientes" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 14pt, style=Bold"/>
     </ReportTitleBand>
     <PageHeaderBand Name="PageHeader1" Top="51.25" Width="718.2" Height="18.9">
-      <TextObject Name="Text8" Left="255.15" Width="189" Height="18.9" Fill.Color="129, 128, 128, 128" Text="CPF" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
-      <TextObject Name="Text12" Left="66.15" Width="189" Height="18.9" Fill.Color="129, 128, 128, 128" Text="Nome" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
-      <TextObject Name="Text13" Left="567" Width="151.2" Height="18.9" Fill.Color="129, 128, 128, 128" Text="Cidade" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
-      <TextObject Name="Text30" Width="66.15" Height="18.9" Fill.Color="129, 128, 128, 128" Text="ID" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
-      <TextObject Name="Text35" Left="444.15" Width="122.85" Height="18.9" Fill.Color="129, 128, 128, 128" Text="Telefone" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text8" Left="359.1" Width="113.4" Height="18.9" Fill.Color="129, 128, 128, 128" Text="CPF" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text12" Width="170.1" Height="18.9" Fill.Color="129, 128, 128, 128" Text="Nome" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text13" Left="585.9" Width="132.3" Height="18.9" Fill.Color="129, 128, 128, 128" Text="Cidade" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text35" Left="472.5" Width="113.4" Height="18.9" Fill.Color="129, 128, 128, 128" Text="Telefone" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text40" Left="170.1" Width="189" Height="18.9" Fill.Color="129, 128, 128, 128" Text="E-mail" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
     </PageHeaderBand>
     <DataBand Name="Data1" Top="74.15" Width="718.2" Height="18.9" DataSource="Cliente">
-      <TextObject Name="Text1" Width="56.7" Height="18.9" Text="[Cliente.id]" Font="Arial, 10pt"/>
-      <TextObject Name="Text3" Left="56.7" Width="198.45" Height="18.9" Text="[Cliente.nome_cliente]" Font="Arial, 10pt"/>
-      <TextObject Name="Text37" Left="255.15" Width="189" Height="18.9" Text="[Cliente.CPF]" Font="Arial, 10pt"/>
-      <TextObject Name="Text38" Left="444.15" Width="122.85" Height="18.9" Text="[Cliente.telefone]" Font="Arial, 10pt"/>
-      <TextObject Name="Text39" Left="567" Width="151.2" Height="18.9" Text="[Cliente.cidade]" Font="Arial, 10pt"/>
+      <TextObject Name="Text37" Left="359.1" Width="113.4" Height="18.9" Text="[Cliente.CPF]" Font="Arial, 10pt"/>
+      <TextObject Name="Text38" Left="472.5" Width="113.4" Height="18.9" Text="[Cliente.telefone]" Font="Arial, 10pt"/>
+      <TextObject Name="Text39" Left="585.9" Width="132.3" Height="18.9" Text="[Cliente.cidade]" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Width="170.1" Height="18.9" Text="[Cliente.nome_cliente]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text41" Left="170.1" Width="189" Height="18.9" Text="[Cliente.email]" Font="Arial, 10pt"/>
     </DataBand>
     <PageFooterBand Name="PageFooter1" Top="97.05" Width="718.2" Height="18.9">
       <TextObject Name="Text5" Left="661.5" Width="56.7" Height="18.9" Text="[PageN]" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 8pt"/>

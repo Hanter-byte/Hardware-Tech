@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OtR7UV6Sb2wG2AV760PNY5y19wrU3gUGWcdSSkOMPN8=",
+  "Hash": "aEwIhrztrLTW0/ZlKd5fJ5bxdvsdMg6FuooCZG9QVgg=",
   "Source": "HardWareTech.WEB",
   "BasePath": "_content/HardWareTech.WEB",
   "Mode": "Default",
@@ -1239,6 +1239,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\reports\\Produto.frx"
+    },
+    {
+      "Identity": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\reports\\Servico.frx",
+      "SourceId": "HardWareTech.WEB",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\",
+      "BasePath": "_content/HardWareTech.WEB",
+      "RelativePath": "reports/Servico.frx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\reports\\Servico.frx"
     }
   ]
 }

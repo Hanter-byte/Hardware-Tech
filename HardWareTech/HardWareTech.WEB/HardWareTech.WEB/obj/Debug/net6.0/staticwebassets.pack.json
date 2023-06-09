@@ -285,6 +285,10 @@
       "PackagePath": "staticwebassets\\reports\\Produto.frx"
     },
     {
+      "Id": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\reports\\Servico.frx",
+      "PackagePath": "staticwebassets\\reports\\Servico.frx"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.HardWareTech.WEB.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

@@ -29,10 +29,10 @@ namespace HardWareTech.WEB.Controllers
             var caminhoReport = Path.Combine(_webHostEnv.WebRootPath, @"reports\Cliente.frx");
             var reportFile = caminhoReport;
             var freport = new FastReport.Report();
-            var productList = oClienteService.oRepositoryCliente.SelecionarTodos();
+            var clienteList = oClienteService.oRepositoryCliente.SelecionarTodos();
 
             freport.Report.Load(reportFile);
-            freport.Dictionary.RegisterBusinessObject(productList, "productList", 10, true);
+            freport.Dictionary.RegisterBusinessObject(clienteList, "clienteList", 10, true);
             //freport.Report.Save(reportFile);
             freport.Prepare();
 
