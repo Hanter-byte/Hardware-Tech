@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aEwIhrztrLTW0/ZlKd5fJ5bxdvsdMg6FuooCZG9QVgg=",
+  "Hash": "zwvvSM+dChZXSDPSx9f1+kaMLXEakkcMl4bJqNSPb9A=",
   "Source": "HardWareTech.WEB",
   "BasePath": "_content/HardWareTech.WEB",
   "Mode": "Default",
@@ -1205,6 +1205,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\reports\\Categoria.frx",
+      "SourceId": "HardWareTech.WEB",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\",
+      "BasePath": "_content/HardWareTech.WEB",
+      "RelativePath": "reports/Categoria.frx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\reports\\Categoria.frx"
     },
     {
       "Identity": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\reports\\Cliente.frx",

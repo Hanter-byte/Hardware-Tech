@@ -1,4 +1,5 @@
-﻿using HardWareTech.DATA.Models;
+﻿using FastReport.Export.PdfSimple;
+using HardWareTech.DATA.Models;
 using HardWareTech.DATA.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,10 +9,12 @@ namespace HardWareTech.WEB.Controllers
     {
         //private CategoriaService oCategoriaService = new CategoriaService();
         private CategoriaService oCategoriaService;
+        public readonly IWebHostEnvironment _webHostEnv;
 
-        public CategoriaController() 
+        public CategoriaController(IWebHostEnvironment webHostEnvironment) 
         {
             oCategoriaService = new CategoriaService();
+            _webHostEnv = webHostEnvironment;
         }
 
         public IActionResult Index()
@@ -19,6 +22,30 @@ namespace HardWareTech.WEB.Controllers
             List<Categoria> oListCategoria = oCategoriaService.oRepositoryCategoria.SelecionarTodos();
             return View(oListCategoria);
         }
+
+        [Route("CategoriasReport")]
+        public IActionResult CategoriasReport()
+        {
+            var caminhoReport = Path.Combine(_webHostEnv.WebRootPath, @"reports\Categoria.frx");
+            var reportFile = caminhoReport;
+            var freport = new FastReport.Report();
+            var productList = oCategoriaService.oRepositoryCategoria.SelecionarTodos();
+
+            freport.Report.Load(reportFile);
+            freport.Dictionary.RegisterBusinessObject(productList, "productList", 10, true);
+            //freport.Report.Save(reportFile);
+            freport.Prepare();
+
+            var pdfExport = new PDFSimpleExport();
+
+            using MemoryStream ms = new MemoryStream();
+            pdfExport.Export(freport, ms);
+            ms.Flush();
+
+            return File(ms.ToArray(), "application/pdf");
+            //return Ok($"Relatorio gerado: {caminhoReport}");
+        }
+
         public IActionResult Create()
         {
             return View();

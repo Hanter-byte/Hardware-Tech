@@ -277,6 +277,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\reports\\Categoria.frx",
+      "PackagePath": "staticwebassets\\reports\\Categoria.frx"
+    },
+    {
       "Id": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\reports\\Cliente.frx",
       "PackagePath": "staticwebassets\\reports\\Cliente.frx"
     },

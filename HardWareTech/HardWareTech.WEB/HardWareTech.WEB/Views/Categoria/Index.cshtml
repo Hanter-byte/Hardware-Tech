@@ -6,8 +6,15 @@
 
 <h1 class="text-center display-4">Listagem de Categorias</h1>
 
-<div class="d-gird gap-2 d-md-flex justify-content-md-start">
-    <a class="btn btn-primary" role="button" asp-controller="Categoria" asp-action="Create"><i class="fa fa-plus-circle"></i> Nova Categoria</a>
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <div>
+        <a class="btn btn-primary" role="button" asp-controller="Categoria" asp-action="Create"><i class="fa fa-plus-circle"></i> Nova Categoria</a>
+    </div>
+    <div>
+        <a class="btn btn-danger" role="button" asp-controller="Categoria" asp-action="CategoriasReport" target="_blank">
+            <i class="fa-solid fa-file-pdf"></i> PDF Categoria
+        </a>
+    </div>
 </div>
 <br />
 

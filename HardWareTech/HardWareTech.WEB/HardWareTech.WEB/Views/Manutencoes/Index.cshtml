@@ -6,8 +6,15 @@
 
 <h1 class="text-center display-4">Kanban de Manutenções</h1>
 
-<div class="d-gird gap-2 d-md-flex justify-content-md-start">
-    <a class="btn btn-primary" role="button" asp-controller="Manutencoes" asp-action="Create"><i class="fa fa-plus-circle"></i> Nova Manutenção</a>
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <div>
+        <a class="btn btn-primary" role="button" asp-controller="Manutencoes" asp-action="Create"><i class="fa fa-plus-circle"></i> Nova Manutenção</a>
+    </div>
+    <div>
+        <a class="btn btn-danger" role="button" asp-controller="Cliente" asp-action="ClientesReport" target="_blank">
+            <i class="fa-solid fa-file-pdf"></i> PDF Manutenção
+        </a>
+    </div>
 </div>
 <br />
 
