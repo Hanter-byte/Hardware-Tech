@@ -88,6 +88,7 @@ namespace HardWareTech.WEB.Controllers
 
             ProdutoClienteManutencao oProdutoClienteManutencao = _Service.oRepositoryProdutoClienteManutencao.SelecionarPk(id);
             oManutencaoViewModel.oProdutoClienteManutencao = oProdutoClienteManutencao;
+            ViewBag.idManutencao = oProdutoClienteManutencao.Id;
 
             return View(oManutencaoViewModel);
         }
