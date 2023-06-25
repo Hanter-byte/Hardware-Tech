@@ -1,0 +1,355 @@
+﻿@model ManutencaoViewModel
+
+<h1>Criação de Manutenção</h1>
+
+<hr />
+<div>
+    <a class="btn btn-primary" asp-action="Index"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div hidden class="form-group">
+                <input id="idCliente" asp-for="idCliente" class="form-control" />
+            </div>
+            <div hidden class="form-group">
+                <input id="idLivro" asp-for="idProduto" class="form-control" />
+            </div>
+            <div hidden class="form-group">
+                <input id="idServico" asp-for="idServico" class="form-control" />
+            </div>
+            <div class="card">
+                <div class="card-header">Informações da Manutenção</div>
+                <div class="card-body row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="NomeManutencao" class="control-label"></label>
+                            <input asp-for="NomeManutencao" class="form-control" />
+                            <span asp-validation-for="NomeManutencao" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="Descricao" class="control-label"></label>
+                            <input asp-for="Descricao" class="form-control" />
+                            <span asp-validation-for="Descricao" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="card">
+                <div class="card-header">Cliente</div>
+                <div class="card-body">
+                    <table id="TableManutencao1" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.oCliente.NomeCliente)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.oCliente.Cpf)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.oCliente.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.oCliente.Telefone)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.oListeCliente)
+                            {
+                                <tr onclick="passIdCliente('@item.Id')">
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NomeCliente)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cpf)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Telefone)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">Produto</div>
+                        <div class="card-body">
+                            <table id="TableManutencao2" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.oProduto.NomeProduto)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.oProduto.Marca)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.oProduto.Preco)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.oProduto.Estoque)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.oListProduto)
+                                    {
+                                        <tr onclick="passIdLivro('@item.Id')">
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.NomeProduto)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Marca)
+                                            </td>
+                                            <td>
+                                               R$ @Html.DisplayFor(modelItem => item.Preco)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Estoque)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">Serviço</div>
+                        <div class="card-body">
+                            <table id="TableManutencao3" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.oServico.NomeServico)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.oServico.Preco)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.oListServico)
+                                    {
+                                        <tr onclick="passIdServico('@item.Id')">
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.NomeServico)
+                                            </td>
+                                            <td>
+                                              R$  @Html.DisplayFor(modelItem => item.Preco)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="card">
+                <div class="card-header">Datas</div>
+                <div class="card-body row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="dataCadastro" class="control-label"></label>
+                            <input asp-for="dataCadastro" class="form-control" readonly />
+                            <span asp-validation-for="dataCadastro" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="dataEntrega" class="control-label"></label>
+                            <input asp-for="dataEntrega" class="form-control" />
+                            <span asp-validation-for="dataEntrega" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div style="text-align: right;">
+                <div class="form-group">
+                    <input type="submit" value="Incluir" class="btn btn-success" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            var TableManutencao1 = $("#TableManutencao1").DataTable({
+                ordering: true,
+                paging: true,
+                autoWidth: true,
+                //scrollY: '200px',
+                //scrollCollapse: true,
+                searching: true,
+                oLanguage: {
+                    sEmptyTable: "Nenhum registro encontrado na tabela",
+                    sInfo: "Mostrar _START_ até _END_ de _TOTAL_ registros",
+                    sInfoEmpty: "Mostrar 0 até 0 de 0 Registros",
+                    sInfoFiltered: "(Filtrar de _MAX_ total registros)",
+                    sInfoPostFix: "",
+                    sInfoThousands: ".",
+                    sLengthMenu: "Mostrar _MENU_ registros por pagina",
+                    sLoadingRecords: "Carregando...",
+                    sProcessing: "Processando...",
+                    sZeroRecords: "Nenhum registro encontrado",
+                    sSearch: "Pesquisar",
+                    oPaginate: {
+                        sNext: "Proximo",
+                        sPrevious: "Anterior",
+                        sFirst: "Primeiro",
+                        sLast: "Ultimo",
+                    },
+                    oAria: {
+                        sSortAscending: ": Ordenar colunas de forma ascendente",
+                        sSortDescending: ": Ordenar colunas de forma descendente",
+                    },
+                },
+                lengthMenu: [
+                    [5, 10, 25, 50],
+                    [5, 10, 25, 50],
+                ],
+                pageLength: 5,
+            });
+
+            $("#TableManutencao1 tbody").on("click", "tr", function () {
+                if ($(this).hasClass("selected")) {
+                    $(this).removeClass("selected");
+                } else {
+                    TableManutencao1.$("tr.selected").removeClass("selected");
+                    $(this).addClass("selected");
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            var TableManutencao2 = $("#TableManutencao2").DataTable({
+                ordering: true,
+                paging: true,
+                scrollY: '200px',
+                scrollCollapse: true,
+                autoWidth: true,
+                searching: true,
+                oLanguage: {
+                    sEmptyTable: "Nenhum registro encontrado na tabela",
+                    sInfo: "Mostrar _START_ até _END_ de _TOTAL_ registros",
+                    sInfoEmpty: "Mostrar 0 até 0 de 0 Registros",
+                    sInfoFiltered: "(Filtrar de _MAX_ total registros)",
+                    sInfoPostFix: "",
+                    sInfoThousands: ".",
+                    sLengthMenu: "Mostrar _MENU_ registros por pagina",
+                    sLoadingRecords: "Carregando...",
+                    sProcessing: "Processando...",
+                    sZeroRecords: "Nenhum registro encontrado",
+                    sSearch: "Pesquisar",
+                    oPaginate: {
+                        sNext: "Proximo",
+                        sPrevious: "Anterior",
+                        sFirst: "Primeiro",
+                        sLast: "Ultimo",
+                    },
+                    oAria: {
+                        sSortAscending: ": Ordenar colunas de forma ascendente",
+                        sSortDescending: ": Ordenar colunas de forma descendente",
+                    },
+                },
+                lengthMenu: [
+                    [5, 10, 25, 50],
+                    [5, 10, 25, 50],
+                ],
+                pageLength: 5,
+            });
+
+            $("#TableManutencao2 tbody").on("click", "tr", function () {
+                if ($(this).hasClass("selected")) {
+                    $(this).removeClass("selected");
+                } else {
+                    TableManutencao2.$("tr.selected").removeClass("selected");
+                    $(this).addClass("selected");
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            var TableManutencao3 = $("#TableManutencao3").DataTable({
+                ordering: true,
+                paging: true,
+                autoWidth: true,
+                scrollY: '200px',
+                scrollCollapse: true,
+                searching: true,
+                oLanguage: {
+                    sEmptyTable: "Nenhum registro encontrado na tabela",
+                    sInfo: "Mostrar _START_ até _END_ de _TOTAL_ registros",
+                    sInfoEmpty: "Mostrar 0 até 0 de 0 Registros",
+                    sInfoFiltered: "(Filtrar de _MAX_ total registros)",
+                    sInfoPostFix: "",
+                    sInfoThousands: ".",
+                    sLengthMenu: "Mostrar _MENU_ registros por pagina",
+                    sLoadingRecords: "Carregando...",
+                    sProcessing: "Processando...",
+                    sZeroRecords: "Nenhum registro encontrado",
+                    sSearch: "Pesquisar",
+                    oPaginate: {
+                        sNext: "Proximo",
+                        sPrevious: "Anterior",
+                        sFirst: "Primeiro",
+                        sLast: "Ultimo",
+                    },
+                    oAria: {
+                        sSortAscending: ": Ordenar colunas de forma ascendente",
+                        sSortDescending: ": Ordenar colunas de forma descendente",
+                    },
+                },
+                lengthMenu: [
+                    [5, 10, 25, 50],
+                    [5, 10, 25, 50],
+                ],
+                pageLength: 5,
+            });
+
+            $("#TableManutencao3 tbody").on("click", "tr", function () {
+                if ($(this).hasClass("selected")) {
+                    $(this).removeClass("selected");
+                } else {
+                    TableManutencao3.$("tr.selected").removeClass("selected");
+                    $(this).addClass("selected");
+                }
+            });
+        });
+
+        function passIdCliente(idCliente) {
+            document.getElementById("idCliente").value = idCliente;
+        }
+
+        function passIdLivro(idLivro) {
+            document.getElementById("idLivro").value = idLivro;
+        }
+
+        function passIdServico(idServico) {
+            document.getElementById("idServico").value = idServico;
+        }
+    </script>
+}

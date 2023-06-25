@@ -1,0 +1,114 @@
+﻿@model IEnumerable<HardWareTech.DATA.Models.Produto>
+
+@{
+    ViewData["Title"] = "Listagem de Produtos";
+}
+
+<h1 class="text-center display-4">Listagem de Produtos</h1>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <div>
+        <a class="btn btn-primary" role="button" asp-controller="Produto" asp-action="Create"><i class="fa fa-plus-circle"></i> Novo Produto</a>
+    </div>
+    <div>
+        <a class="btn btn-danger" role="button" asp-controller="Produto" asp-action="ProductsReport" target="_blank">
+            <i class="fa-solid fa-file-pdf"></i> PDF Produto
+        </a>
+    </div>
+</div>
+
+<br />
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert" style="text-align: center;">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+        @TempData["MensagemSucesso"]
+    </div>
+} @if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<table id="myTable" class="table table-striped">
+    <thead>
+        <tr>
+            @*<th scope="col">#</th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.NomeProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estoque)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.IdCategoria)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Datacadastro)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<th scope="row">@Html.DisplayFor(modelItem => item.Id)</th>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marca)
+                </td>
+                <td>
+                    R$ @Html.DisplayFor(modelItem => item.Preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estoque)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.IdCategoria)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Datacadastro)
+                </td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
+                    <a asp-action="Details" class="btn btn-success" asp-route-id="@item.Id"><i class="fa fa-search"></i></a>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal-@item.Id">
+                        <i class="fa fa-trash"></i>
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="DeleteModal-@item.Id" tabindex="-1" aria-labelledby="DeleteModal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="DeleteModal">Excluir Produto</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Deseja realmente excluir o produto: @item.NomeProduto ?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id">Sim</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

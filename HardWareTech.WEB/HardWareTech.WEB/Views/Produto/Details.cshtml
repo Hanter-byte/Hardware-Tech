@@ -1,0 +1,89 @@
+﻿@model HardWareTech.DATA.Models.Produto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Produto: @Html.DisplayName(Model.NomeProduto)</h1>
+
+<div>
+    <hr />
+    <div>
+        <a asp-action="Edit" class="btn btn-success" asp-route-id="@Model?.Id"><i class="fa-solid fa-pencil"></i>Alterar</a>
+        <a asp-action="Index" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+    </div>
+    <br />
+
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success" role="alert" style="text-align: center;">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    } @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+
+    <div class="card">
+        <div class="card-header">Dados do Produto</div>
+        <div class="card-body row">
+            <div class="col-md">
+                <div class="form-group">
+                    <label asp-for="NomeProduto" class="control-label"></label>
+                    <input asp-for="NomeProduto" class="form-control" readonly />
+                    <span asp-validation-for="NomeProduto" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-group">
+                    <label asp-for="Descricao" class="control-label"></label>
+                    <input asp-for="Descricao" class="form-control" readonly />
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="card">
+        <div class="card-header"></div>
+        <div class="card-body row">
+            <div class="col-md">
+                <div class="form-group">
+                    <label asp-for="Preco" class="control-label"></label>
+                    <input asp-for="Preco" class="form-control" readonly />
+                    <span asp-validation-for="Preco" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-group">
+                    <label asp-for="Estoque" class="control-label"></label>
+                    <input asp-for="Estoque" class="form-control" readonly />
+                    <span asp-validation-for="Estoque" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="card">
+        <div class="card-header"></div>
+        <div class="card-body row">
+            <div class="col-md">
+                <div class="form-group">
+                    <label asp-for="Marca" class="control-label"></label>
+                    <input asp-for="Marca" class="form-control" readonly />
+                    <span asp-validation-for="Marca" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-group">
+                    <label asp-for="IdCategoria" class="control-label"></label>
+                    <select asp-for="IdCategoria" class="form-control" asp-items="ViewBag.Categorias" disabled></select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

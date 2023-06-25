@@ -1,0 +1,96 @@
+﻿@model HardWareTech.DATA.Models.Cliente
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Cliente: @Html.DisplayName(Model.NomeCliente)</h1>
+
+<div>
+    <hr />
+    <div>
+        <a asp-action="Edit" class="btn btn-success" asp-route-id="@Model?.Id"><i class="fa-solid fa-pencil"></i>Alterar</a>
+        <a asp-action="Index" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+    </div>
+    <br />
+
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success" role="alert" style="text-align: center;">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    } @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+
+    <div class="card">
+        <div class="card-header">Dados Pessoais</div>
+        <div class="card-body row">
+            <div class="col-md">
+                <div class="form-group col-md">
+                    <label> @Html.DisplayNameFor(model => model.Cpf)</label>
+                    <input class="form-control" value="@Html.DisplayFor(model => model.Cpf)" readonly />
+                </div>
+            </div>
+            <div class="form-group col-md">
+                <div class="form-group col-md">
+                    <label> @Html.DisplayNameFor(model => model.NomeCliente)</label>
+                    <input class="form-control" value="@Html.DisplayFor(model => model.NomeCliente)" readonly />
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="card">
+        <div class="card-header">Endereço</div>
+        <div class="card-body row">
+            <div class="col-md">
+                <div class="form-group col-md">
+                    <label> @Html.DisplayNameFor(model => model.Endereco)</label>
+                    <input class="form-control" value="@Html.DisplayFor(model => model.Endereco)" readonly />
+                </div>
+            </div>
+            <div class="form-group col-md">
+                <div class="form-group col-md">
+                    <label> @Html.DisplayNameFor(model => model.Cidade)</label>
+                    <input class="form-control" value="@Html.DisplayFor(model => model.Cidade)" readonly />
+                </div>
+            </div>
+            <div class="form-group col-md">
+                <div class="form-group col-md">
+                    <label> @Html.DisplayNameFor(model => model.Bairro)</label>
+                    <input class="form-control" value="@Html.DisplayFor(model => model.Bairro)" readonly />
+                </div>
+            </div>
+            <div class="form-group col-md">
+                <div class="form-group col-md">
+                    <label> @Html.DisplayNameFor(model => model.NumeroEndereco)</label>
+                    <input class="form-control" value="@Html.DisplayFor(model => model.NumeroEndereco)" readonly />
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="card">
+        <div class="card-header">Contato</div>
+        <div class="card-body row">
+            <div class="col-md">
+                <div class="form-group col-md">
+                    <label> @Html.DisplayNameFor(model => model.Telefone)</label>
+                    <input class="form-control" value="@Html.DisplayFor(model => model.Telefone)" readonly />
+                </div>
+            </div>
+            <div class="form-group col-md">
+                <div class="form-group col-md">
+                    <label> @Html.DisplayNameFor(model => model.Email)</label>
+                    <input class="form-control" value="@Html.DisplayFor(model => model.Email)" readonly />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

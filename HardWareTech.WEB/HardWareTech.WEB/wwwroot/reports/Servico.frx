@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="06/08/2023 11:11:21" ReportInfo.Modified="06/09/2023 11:08:17" ReportInfo.CreatorVersion="2023.2.5.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq2/fJeZHfXvLgJXYAsV8U8ZFL4B3d1vFdWju5nQoc3mwQIzwp/Jyv2XMjDiafrcKnN8Rud0YToOUlFrLVl5cBvfNND960chbk/jD70KCR8TnU5v5r+XXmZ+DB9v7KUDSA5VxeDHMvHuQLUjZ+jNdUTwGJO7bX5y/pZhgPFZgk3ce0yMlor9Mefj3gLwMYTrvC6h6HBVMkTWyAWb0RA0E4xN6QTRpOs1xm3kXdRUk06Fs=">
+      <TableDataSource Name="Servico" DataType="System.Int32" Enabled="true" TableName="Servico">
+        <Column Name="id" DataType="System.Int32"/>
+        <Column Name="nome_servico" DataType="System.String"/>
+        <Column Name="descricao" DataType="System.String"/>
+        <Column Name="preco" DataType="System.Decimal"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text42" Width="718.2" Height="28.35" Text="Listagem de Serviços" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 14pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text12" Top="9.45" Width="255.15" Height="18.9" Fill.Color="129, 128, 128, 128" Text="Nome" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text13" Left="623.7" Top="9.45" Width="94.5" Height="18.9" Fill.Color="129, 128, 128, 128" Text="Preço" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text38" Left="255.15" Top="9.45" Width="368.55" Height="18.9" Fill.Color="129, 128, 128, 128" Text="Descrição&#13;&#10;" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="18.9" DataSource="Servico">
+      <TextObject Name="Text45" Width="255.15" Height="18.9" Text="[Servico.nome_servico]" Font="Arial, 10pt"/>
+      <TextObject Name="Text46" Left="255.15" Width="368.55" Height="18.9" Text="[Servico.descricao]" Font="Arial, 10pt"/>
+      <TextObject Name="Text47" Left="623.7" Width="94.5" Height="18.9" Text="[Servico.preco]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="97.05" Width="718.2" Height="18.9">
+      <TextObject Name="Text5" Left="661.5" Width="56.7" Height="18.9" Text="[PageN]" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 8pt"/>
+      <TextObject Name="Text6" Width="255.15" Height="18.9" Text="Gerado em [Date]" VertAlign="Center" Font="Tahoma, 8pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

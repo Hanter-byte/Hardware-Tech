@@ -1,0 +1,46 @@
+﻿@model LoginModel
+@{
+    Layout = "_LayoutDeslogado";
+    ViewData["Title"] = "Login";
+}
+
+<header class="text-center ">
+    @*<h1>Bem-vindo</h1>
+    <p>Por favor, faça login para continuar</p>*@
+    <img src="/img/logo.png" alt="Imagem de boas-vindas" style="width:19%; height:19%;">
+</header>
+
+
+@if (TempData["MensagemSucesso"] != null) {
+<div class="alert alert-success" role="alert" style="text-align: center;">
+    <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+    @TempData["MensagemSucesso"]
+</div>
+} @if (TempData["MensagemErro"] != null) {
+    <div class="alert alert-danger" role="alert" style="text-align: center;">
+    <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+    @TempData["MensagemErro"]
+</div>
+}
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3 bg-light" asp-controller="Login" asp-action="Entrar" method="post">
+                <div class="form-floating mb-3">
+                    <input type="text" asp-for="Login" class="form-control" id="login" />
+                    <label for="login" class="form-label">Login</label>
+                    @Html.ValidationMessageFor(x => x.Login)
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" asp-for="Senha" class="form-control" id="senha" />
+                    <label for="senha" class="form-label">Senha</label>
+                    @Html.ValidationMessageFor(x => x.Senha)
+                </div>
+                <button type="submit" class="w-100 btn btn-outline-success"><i class="fa-solid fa-arrow-right"></i> Entrar</button>
+                @*<br/>
+                <button type="submit" class="btn btn-outline-secondary mt-3">Esqueci minha senha</button>*@
+            </form>
+        </div>
+    </div>
+</div>
