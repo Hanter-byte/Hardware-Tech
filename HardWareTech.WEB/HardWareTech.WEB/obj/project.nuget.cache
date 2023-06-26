@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vgez+yovMQ5f89Me32EPMsfOKbzemHYmkdkrJyzfbHvkQeNbprIsZ05D41h3EWlvnftxP9M4X41h+XDTW0Tw2Q==",
+  "dgSpecHash": "Ibk/LRzAf5MN7l15R2YNxrSiFIr9VjH27ntmGeDw87G/7B/BsmvbDyuhDr8uzglt2UZk6Anb/ZLe9TeCe++JTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\HardWareTech.WEB.csproj",
+  "projectFilePath": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech.WEB\\HardWareTech.WEB\\HardWareTech.WEB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joao.psilva\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\joao.psilva\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

@@ -9,121 +9,121 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HardWareTech.WEB
 build_property.RootNamespace = HardWareTech.WEB
-build_property.ProjectDir = C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB\
+build_property.ProjectDir = C:\Users\joao.psilva\Desktop\Projeto\HardWareTech.WEB\HardWareTech.WEB\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\joao.psilva\Desktop\Projeto\HardWareTech\HardWareTech.WEB\HardWareTech.WEB
+build_property.MSBuildProjectDirectory = C:\Users\joao.psilva\Desktop\Projeto\HardWareTech.WEB\HardWareTech.WEB
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Categoria/Create.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Categoria/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Categoria/Edit.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Categoria/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Categoria/Index.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Categoria/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Cliente/Create.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Cliente/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Cliente/Details.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Cliente/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Cliente/Edit.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Cliente/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Cliente/Index.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Cliente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Home/Index.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Home/Privacy.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Login/Index.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Manutencoes/Create.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Manutencoes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudXRlbmNvZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Manutencoes/Edit.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Manutencoes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudXRlbmNvZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Manutencoes/Index.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Manutencoes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudXRlbmNvZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Produto/Create.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Produto/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Produto/Details.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Produto/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Produto/Edit.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Produto/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Produto/Index.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Produto/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Servico/Create.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Servico/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vydmljb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Servico/Edit.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Servico/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vydmljb1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Servico/Index.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Servico/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vydmljb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Shared/Error.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Usuario/Create.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Usuario/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Usuario/Index.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Usuario/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/_ViewImports.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/_ViewStart.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Shared/_Layout.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-pcjaor3uj7
 
-[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech/HardWareTech.WEB/HardWareTech.WEB/Views/Shared/_LayoutDeslogado.cshtml]
+[C:/Users/joao.psilva/Desktop/Projeto/HardWareTech.WEB/HardWareTech.WEB/Views/Shared/_LayoutDeslogado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXREZXNsb2dhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-e40bikeoma

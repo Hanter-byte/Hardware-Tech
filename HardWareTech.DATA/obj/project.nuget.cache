@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CKX2oPiXsGTuPLLtuiDlrKtltZlM4Mpt0FHJymmEmPuB3iTuqMWt3+5VtzzJ7N+SMH5ZDLKywP+P1FsG21z9uw==",
+  "dgSpecHash": "6JXKkK3kG2WMH6vhxGHd6QHE0Fja3HAOG/fwWfCOort4WgYUd65y8jFWAU+T+CfKwHnipfCDddZdDS56JgnHfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech\\HardWareTech.DATA\\HardWareTech.DATA.csproj",
+  "projectFilePath": "C:\\Users\\joao.psilva\\Desktop\\Projeto\\HardWareTech.DATA\\HardWareTech.DATA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joao.psilva\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\joao.psilva\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
