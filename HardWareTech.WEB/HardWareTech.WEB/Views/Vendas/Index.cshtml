@@ -1,0 +1,353 @@
+﻿@model HardWareTech.DATA.Models.Venda
+
+@{
+    ViewData["Title"] = "Venda";
+}
+
+<h1>Vendas</h1>
+<hr />
+
+@{
+    if (ViewBag.cpf == null)
+    {
+        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#NovaVendaClienteModal">
+            Nova venda
+        </button>
+    }
+    else
+    {
+        <button disabled type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#NovaVendaClienteModal">
+            Nova venda
+        </button>
+    }
+}
+
+<div class="modal fade" id="NovaVendaClienteModal" tabindex="-1" aria-labelledby="NovaVendaClienteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="NovaVendaClienteModalLabel">Informe o cliente</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <div class="form-group">
+             <label>CPF do cliente</label>
+             <input class="form-control" maxlength="11" type="text" id="cpfCliente" oninput="verificarCPF(this.value)">
+         </div>
+         <div hidden id="infoClienteBusca" class="infoCliente">
+             <input hidden id="IdCliente" />
+             <div class="row pt-2">
+                 <span>Nome: <b id="nomeCliente"></b> </span>
+                 <span>Cidade: <b id="cidadeCliente"></b> </span>
+                 <span>Bairro: <b id="bairroCliente"></b> </span>
+             </div>
+         </div>
+         <div hidden id="infoErro" class="text-center p-3">
+             <b>Cliente não encontrado</b>
+         </div>
+      </div>
+      <div class="modal-footer">
+         <button onclick="NovaVendaComCliente()" id="btnConfirmarCliente" disabled type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirmar cliente</button>
+         <button type="button" class="btn btn-warning" onclick="CorrigirCliente()">Corrigir cliente</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+@{
+    var styleDisabledVendas = "pointer-events: none; background-color: #f0f0f0; opacity: 0.6;";
+    if (ViewBag.cpf != null)
+    {
+        styleDisabledVendas = "";
+    }
+}
+
+<div style="@styleDisabledVendas">
+    <div style="padding-left: 12px;" class="row">
+        <div  class="col-md-5 row mt-2">
+            <div class="row col-md p-0">
+                <div class="col-md pe-0">
+                    <select id="dropdownProdutos" class="form-select" asp-items="ViewBag.produtos" onchange="CarregaIdProduto()"></select>
+                </div>
+                <div class="col-md-4">
+                    <input placeholder="Cod." type="number" min="1" class="form-control" id="codBarrasProduto" />
+                </div>
+            </div>
+            <button id="addProduto" class="btn btn-success col-md-3 ms-2">Incluir</button>
+            <table class="table table-bordered mt-2">
+                <tbody>
+                    <tr>
+                        <td><b>Quantidade</b></td>
+                        <td><input type="number" min="1" class="form-control" value="1" id="qtdProduto" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-7 text-end">
+            <h3>Total: <span id="totalVenda" style="color: #09ab00">R$0,00</span></h3>
+            <div class="row col-md-4 ms-auto">
+                <button class="btn btn-success col-md-12" onclick="EfetuarVenda()">Finalizar venda</button>
+                <button class="btn btn-danger col-md-12 mt-1" onclick="CancelarVenda()">Cancelar venda</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <table id="myTable" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Cod. Produto</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Total</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+
+        // Detecta enter no input de código do produto
+        $('#codBarrasProduto').on('keydown', function (event) {
+            if (event.keyCode === 13) {
+                document.getElementById('addProduto').click();
+                return false;
+            }
+        });
+
+        function CarregaIdProduto(){
+            document.getElementById('codBarrasProduto').value = document.getElementById('dropdownProdutos').value;
+        }
+
+        function NovaVendaComCliente(){
+            var cpf = document.getElementById('cpfCliente').value;
+            window.location.href = "/vendas?cpf=" + cpf;
+        }
+
+        function CorrigirCliente(){
+            document.getElementById("infoClienteBusca").setAttribute('hidden', 'hidden');
+            document.getElementById('btnConfirmarCliente').setAttribute('disabled', 'disabled');
+            document.getElementById('cpfCliente').value = '';
+        }
+
+        function verificarCPF(cpf) {
+            console.log(cpf);
+          if (cpf.length === 11) {
+            validarCPF(cpf);
+          }else{
+              document.getElementById('btnConfirmarCliente').setAttribute('disabled', 'disabled');
+          }
+        }
+
+        function validarCPF(cpf) {
+
+            $.ajax({
+              url: "/vendas/SelecionarCliente",
+              type: "GET",
+              data: { cpf: cpf },
+              dataType: "json",
+              success: function(result) {
+
+                  if(result.sucesso == true){
+                      document.getElementById("nomeCliente").innerHTML = result.retorno.nomeCliente;
+                      document.getElementById("cidadeCliente").innerHTML = result.retorno.cidade;
+                      document.getElementById("bairroCliente").innerHTML = result.retorno.bairro;
+
+                      document.getElementById("infoClienteBusca").removeAttribute('hidden');
+                      document.getElementById('infoErro').setAttribute('hidden','hidden');
+                      document.getElementById('btnConfirmarCliente').removeAttribute('disabled');
+                  }else{
+                      document.getElementById('infoErro').removeAttribute('hidden');
+                      document.getElementById("infoClienteBusca").setAttribute('hidden', 'hidden');
+                      document.getElementById('btnConfirmarCliente').setAttribute('disabled', 'disabled');
+                  }
+
+                  
+              },
+              error: function(xhr, status, error) {
+                console.error("Ocorreu um erro:", error);
+              }
+            });
+        }
+
+        // Variáveis globais
+        var total = 0.0;
+        var produtos = [];
+        var tableProdutos;
+
+        $(document).ready(function () {
+            tableProdutos = $('#myTable').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+                },
+                searching: false, paging: false, info: false, "bDestroy": true
+            });
+
+            $('#addProduto').on('click', function () {
+
+                var idProduto = document.getElementById('codBarrasProduto').value;
+
+                if(idProduto <= 0){
+                    return false;
+                }
+
+                
+
+                $.ajax({
+                    url: "/vendas/SelecionarProduto",
+                    type: "GET",
+                    data: { idProduto: idProduto },
+                    dataType: "json",
+                    success: function (result) {
+
+                        if(result.sucesso == true){
+                            var quantidade = document.getElementById('qtdProduto').value;
+                            if (quantidade <= 0) {
+                                return false;
+                            }
+
+                            var produtoExistente = buscarProdutoPorId(result.retorno.id);
+                            if(produtoExistente == undefined){
+                                produtos.push({
+                                    id: result.retorno.id,
+                                    produto: result.retorno.nomeProduto,
+                                    quantidade: parseInt(quantidade),
+                                    preco: result.retorno.preco
+                                });
+                            }else{
+                                var produtoIndex = produtos.findIndex(function (produto) {
+                                    return produto.id === produtoExistente.id;
+                                });
+
+                                var novaQuantidade = produtoExistente.quantidade + parseInt(quantidade);
+                                var novosValores = { quantidade: novaQuantidade };
+
+                                produtos[produtoIndex] = { ...produtos[produtoIndex], ...novosValores };
+                            }
+
+                            AtualizarLista();
+
+                            document.getElementById('qtdProduto').value = 1;
+                            document.getElementById('codBarrasProduto').value = '';
+                            document.getElementById('dropdownProdutos').value = '';
+                        }
+
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Ocorreu um erro:", error);
+                    }
+                });
+
+
+                
+            });
+
+        });
+
+        function AtualizarLista() {
+            tableProdutos.clear().draw();
+            total = 0.0;
+            produtos.forEach(function logArrayElements(element, index, array) {
+
+                total += element.preco * element.quantidade;
+                var totalFormatado = ('R$' + total.toFixed(2)).replace('.', ',');
+                document.getElementById('totalVenda').innerHTML = totalFormatado;
+                var valorTotalPorItem = (element.preco * element.quantidade).toFixed(2) + "";
+
+                console.log(element);
+
+                tableProdutos.row
+                    .add([element.id, element.produto, element.quantidade, 'R$' + valorTotalPorItem.replace('.', ','), '<button onclick="removerProduto(' + element.id + ')" class="btn btn-danger"><i class="fa fa-minus"></i></button>'])
+                    .draw(false);
+            });
+        }
+
+        function removerProduto(id) {
+            var produtoIndex = produtos.findIndex(function (produto) {
+                return produto.id === id;
+            });
+
+            produtos[produtoIndex].quantidade -= 1;
+            if(produtos[produtoIndex].quantidade == 0){
+                produtos.splice(produtoIndex, 1);
+            }
+            AtualizarLista();
+            if (produtos.length == 0) {
+                document.getElementById('totalVenda').innerHTML = 'R$0,00';
+            }
+        }
+
+        function buscarProdutoPorId(id) {
+            return produtos.find(function (produto) {
+                return produto.id === id;
+            });
+        }
+
+        // Efetuar venda
+
+        function EfetuarVenda(){
+            for (var i = 0; i < produtos.length; i++) {
+                produtos[i].preco = produtos[i].preco.toString().replace('.', ',');
+            }
+            $.ajax({
+                url: '/Vendas/EfetuarVenda',
+                type: 'POST',
+                data: { cpf: "@ViewBag.cpf", produtos: produtos },
+                success: function (data) {
+                    if(data.sucesso == true){
+
+                        Swal.fire({
+                            title: 'Venda concluída',
+                            text: data.mensagem,
+                            showDenyButton: false,
+                            showCancelButton: false,
+                            confirmButtonText: 'Ok',
+                            icon: 'success'
+                        }).then((result) => {
+                            window.location.href = '/vendas';
+                        })
+
+                    }else{
+                        Swal.fire(
+                            'Venda não concluída',
+                            data.mensagem,
+                            'error'
+                        );
+                    }
+                    
+                },
+                error: function (error) {
+                    Swal.fire(
+                        'Venda não concluída',
+                            'Ocorreu um erro ao concluir a venda.',
+                            'error'
+                        );
+                }
+            });
+        }
+
+        function CancelarVenda(){
+            Swal.fire({
+                title: 'Tem certeza que deseja cancelar esta venda?',
+                showDenyButton: true,
+                showCancelButton: false,
+                confirmButtonText: 'Sim',
+                icon: 'question',
+                denyButtonText: 'Não',
+                denyButtonColor: '##0034a3'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '/vendas';
+                }
+                
+            })
+        }
+
+    </script>
+}

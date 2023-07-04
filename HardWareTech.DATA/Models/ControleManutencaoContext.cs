@@ -22,15 +22,17 @@ namespace HardWareTech.DATA.Models
         public virtual DbSet<Cliente> Cliente { get; set; }
         public virtual DbSet<Produto> Produto { get; set; }
         public virtual DbSet<ProdutoClienteManutencao> ProdutoClienteManutencao { get; set; }
+        public virtual DbSet<ProdutoVenda> ProdutoVenda { get; set; }
         public virtual DbSet<Servico> Servico { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<Venda> Venda { get; set; }
         public virtual DbSet<VwProdutoClienteManutencao> VwProdutoClienteManutencao { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=CIAN019401165\\SQLEXPRESS;Initial Catalog=ControleManutencao;Integrated Security=True; Trust Server Certificate=true");
+                optionsBuilder.UseSqlServer("Data Source=CIAN019401165\\SQLEXPRESS;Initial Catalog=ControleManutencao;Integrated Security=True;Trust Server Certificate=true") ;
             }
         }
 
@@ -68,6 +70,30 @@ namespace HardWareTech.DATA.Models
                     .HasForeignKey(d => d.IdServico)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Produto_Cliente_Manutencao_Servico");
+            });
+
+            modelBuilder.Entity<ProdutoVenda>(entity =>
+            {
+                entity.HasOne(d => d.IdProdutoNavigation)
+                    .WithMany(p => p.ProdutoVenda)
+                    .HasForeignKey(d => d.IdProduto)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Produto_Venda_Produto");
+
+                entity.HasOne(d => d.IdVendaNavigation)
+                    .WithMany(p => p.ProdutoVenda)
+                    .HasForeignKey(d => d.IdVenda)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Produto_Venda_Venda");
+            });
+
+            modelBuilder.Entity<Venda>(entity =>
+            {
+                entity.HasOne(d => d.IdClienteNavigation)
+                    .WithMany(p => p.Venda)
+                    .HasForeignKey(d => d.IdCliente)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Venda_Cliente");
             });
 
             modelBuilder.Entity<VwProdutoClienteManutencao>(entity =>

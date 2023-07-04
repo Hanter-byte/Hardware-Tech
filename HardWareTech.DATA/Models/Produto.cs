@@ -13,6 +13,7 @@ namespace HardWareTech.DATA.Models
         public Produto()
         {
             ProdutoClienteManutencao = new HashSet<ProdutoClienteManutencao>();
+            ProdutoVenda = new HashSet<ProdutoVenda>();
         }
 
         [Key]
@@ -43,5 +44,7 @@ namespace HardWareTech.DATA.Models
         public virtual Categoria IdCategoriaNavigation { get; set; }
         [InverseProperty("IdProdutoNavigation")]
         public virtual ICollection<ProdutoClienteManutencao> ProdutoClienteManutencao { get; set; }
+        [InverseProperty("IdProdutoNavigation")]
+        public virtual ICollection<ProdutoVenda> ProdutoVenda { get; set; }
     }
 }

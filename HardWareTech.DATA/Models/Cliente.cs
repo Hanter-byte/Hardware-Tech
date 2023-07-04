@@ -13,6 +13,7 @@ namespace HardWareTech.DATA.Models
         public Cliente()
         {
             ProdutoClienteManutencao = new HashSet<ProdutoClienteManutencao>();
+            Venda = new HashSet<Venda>();
         }
 
         [Key]
@@ -61,6 +62,7 @@ namespace HardWareTech.DATA.Models
 
         [InverseProperty("IdClienteNavigation")]
         public virtual ICollection<ProdutoClienteManutencao> ProdutoClienteManutencao { get; set; }
+        public virtual ICollection<Venda> Venda { get; set; }
 
         public bool ValidarCPF(string cpf)
         {

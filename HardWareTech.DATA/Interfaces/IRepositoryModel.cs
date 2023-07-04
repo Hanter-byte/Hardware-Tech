@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HardWareTech.DATA.Interfaces
 {
-    internal interface IRepositoryModel<T> where T: class
+    public interface IRepositoryModel<T> where T: class
     {
         List<T> SelecionarTodos();
         T SelecionarPk(params object[] variavel);

@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace HardWareTech.DATA.Interfaces
 {
-    internal interface IRepositoryCliente : IRepositoryModel<Cliente>
+    public interface IRepositoryCliente : IRepositoryModel<Cliente>
     {
+        Cliente SelecionarClienteByCPF(string cpf);
     }
 }

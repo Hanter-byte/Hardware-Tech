@@ -80,7 +80,7 @@
 
         <div class="swim-lane">
             <h3 class="heading">Feito</h3>
-            @foreach (var item in Model.Where(x => x.Feito == true && x.DataFinalizacao.Year == currentYear@* && x.DataFinalizacao.Month == currentMonth*@))
+            @foreach (var item in Model.Where(x => x.Feito == true && x.DataFinalizacao.Year == currentYear && x.DataFinalizacao.Month == currentMonth))
             {
                 var styleStatus = "rounded text-white bg-success";@* if (DateTime.Now.Date > item.DataFinalizacao & item.Feito != true) { styleStatus = "rounded text-white bg-danger"; }
                 else if

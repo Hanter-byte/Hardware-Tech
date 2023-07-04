@@ -14,5 +14,10 @@ namespace HardWareTech.DATA.Repositories
         {
 
         }
+
+        public Cliente SelecionarClienteByCPF(string cpf)
+        {
+            return _Contexto.Cliente.Where(x => x.Cpf.Equals(cpf)).FirstOrDefault();
+        }
     }
 }
