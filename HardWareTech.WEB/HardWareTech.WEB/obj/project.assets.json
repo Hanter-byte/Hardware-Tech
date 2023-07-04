@@ -11571,19 +11571,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\joao.psilva\\.nuget\\packages\\": {}
+    "C:\\Users\\Vinícius\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joao.psilva\\Downloads\\Hardware-Tech02\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\HardWareTech.WEB.csproj",
+      "projectUniqueName": "C:\\Users\\Vinícius\\Desktop\\TccAtualizado\\Hardware-Tech\\HardWareTech.WEB\\HardWareTech.WEB\\HardWareTech.WEB.csproj",
       "projectName": "HardWareTech.WEB",
-      "projectPath": "C:\\Users\\joao.psilva\\Downloads\\Hardware-Tech02\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\HardWareTech.WEB.csproj",
-      "packagesPath": "C:\\Users\\joao.psilva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joao.psilva\\Downloads\\Hardware-Tech02\\HardWareTech\\HardWareTech.WEB\\HardWareTech.WEB\\obj\\",
+      "projectPath": "C:\\Users\\Vinícius\\Desktop\\TccAtualizado\\Hardware-Tech\\HardWareTech.WEB\\HardWareTech.WEB\\HardWareTech.WEB.csproj",
+      "packagesPath": "C:\\Users\\Vinícius\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Vinícius\\Desktop\\TccAtualizado\\Hardware-Tech\\HardWareTech.WEB\\HardWareTech.WEB\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\joao.psilva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vinícius\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11591,14 +11596,16 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Users\\Vinícius\\Desktop\\Estudos\\Estudos 5 Semestre\\Proframação IV\\2 trimestre\\20-04-2023": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\joao.psilva\\Downloads\\Hardware-Tech02\\HardWareTech\\HardWareTech.DATA\\HardWareTech.DATA.csproj": {
-              "projectPath": "C:\\Users\\joao.psilva\\Downloads\\Hardware-Tech02\\HardWareTech\\HardWareTech.DATA\\HardWareTech.DATA.csproj"
+            "C:\\Users\\Vinícius\\Desktop\\TccAtualizado\\Hardware-Tech\\HardWareTech.DATA\\HardWareTech.DATA.csproj": {
+              "projectPath": "C:\\Users\\Vinícius\\Desktop\\TccAtualizado\\Hardware-Tech\\HardWareTech.DATA\\HardWareTech.DATA.csproj"
             }
           }
         }
@@ -11673,7 +11680,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
