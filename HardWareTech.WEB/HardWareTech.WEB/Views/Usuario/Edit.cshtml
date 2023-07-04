@@ -1,0 +1,70 @@
+﻿@model HardWareTech.DATA.Models.Usuario
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Alterar dados do Usuario</h1>
+<hr />
+
+<div>
+    <a class="btn btn-primary" asp-action="Index"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+</div>
+<br />
+<div class="row">
+    <div class="col-md">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="card">
+                <div class="card-header">Contatos do Usuário</div>
+                <div class="card-body row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="NomeUsuario" class="control-label">Nome do Usuário</label>
+                            <input asp-for="NomeUsuario" class="form-control" />
+                            <span asp-validation-for="NomeUsuario" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label">Email</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-header">Dados de Login</div>
+                <div class="card-body row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="Login" class="control-label">Login</label>
+                            <input asp-for="Login" class="form-control" />
+                            <span asp-validation-for="Login" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="Senha" class="control-label"></label>
+                            <input asp-for="Senha" type="password" class="form-control" placeholder="Informe a nova senha" />
+                            <span asp-validation-for="Senha" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br />
+            
+                
+            
+            <br />
+            <br />
+            <div style="text-align: right;">
+                <div class="form-group">
+                    <input type="submit" value="Alterar" class="btn btn-success" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
