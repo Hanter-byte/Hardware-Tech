@@ -1936,11 +1936,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joao.psilva\\Desktop\\teste\\Hardware-Tech\\HardWareTech.DATA\\HardWareTech.DATA.csproj",
+      "projectUniqueName": "C:\\Users\\joao.psilva\\Desktop\\Hardware-Tech\\HardWareTech.DATA\\HardWareTech.DATA.csproj",
       "projectName": "HardWareTech.DATA",
-      "projectPath": "C:\\Users\\joao.psilva\\Desktop\\teste\\Hardware-Tech\\HardWareTech.DATA\\HardWareTech.DATA.csproj",
+      "projectPath": "C:\\Users\\joao.psilva\\Desktop\\Hardware-Tech\\HardWareTech.DATA\\HardWareTech.DATA.csproj",
       "packagesPath": "C:\\Users\\joao.psilva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joao.psilva\\Desktop\\teste\\Hardware-Tech\\HardWareTech.DATA\\obj\\",
+      "outputPath": "C:\\Users\\joao.psilva\\Desktop\\Hardware-Tech\\HardWareTech.DATA\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\joao.psilva\\AppData\\Roaming\\NuGet\\NuGet.Config",

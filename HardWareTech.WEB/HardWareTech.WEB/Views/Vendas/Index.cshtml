@@ -291,46 +291,57 @@
 
         // Efetuar venda
 
-        function EfetuarVenda(){
-            for (var i = 0; i < produtos.length; i++) {
-                produtos[i].preco = produtos[i].preco.toString().replace('.', ',');
-            }
-            $.ajax({
-                url: '/Vendas/EfetuarVenda',
-                type: 'POST',
-                data: { cpf: "@ViewBag.cpf", produtos: produtos },
-                success: function (data) {
-                    if(data.sucesso == true){
-
-                        Swal.fire({
-                            title: 'Venda concluída',
-                            text: data.mensagem,
-                            showDenyButton: false,
-                            showCancelButton: false,
-                            confirmButtonText: 'Ok',
-                            icon: 'success'
-                        }).then((result) => {
-                            window.location.href = '/vendas';
-                        })
-
-                    }else{
-                        Swal.fire(
-                            'Venda não concluída',
-                            data.mensagem,
-                            'error'
-                        );
+        function EfetuarVenda() {
+            Swal.fire({
+                title: 'Deseja realmente efetuar a venda?',
+                //text: 'Esta ação não pode ser desfeita.',
+                showDenyButton: true,
+                showCancelButton: false,
+                confirmButtonText: 'Sim',
+                icon: 'question',
+                denyButtonText: 'Não',
+                denyButtonColor: '##0034a3'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    for (var i = 0; i < produtos.length; i++) {
+                        produtos[i].preco = produtos[i].preco.toString().replace('.', ',');
                     }
-                    
-                },
-                error: function (error) {
-                    Swal.fire(
-                        'Venda não concluída',
-                            'Ocorreu um erro ao concluir a venda.',
-                            'error'
-                        );
+                    $.ajax({
+                        url: '/Vendas/EfetuarVenda',
+                        type: 'POST',
+                        data: { cpf: "@ViewBag.cpf", produtos: produtos },
+                        success: function (data) {
+                            if (data.sucesso == true) {
+                                Swal.fire({
+                                    title: 'Venda concluída',
+                                    text: data.mensagem,
+                                    showDenyButton: false,
+                                    showCancelButton: false,
+                                    confirmButtonText: 'Ok',
+                                    icon: 'success'
+                                }).then((result) => {
+                                    window.location.href = '/vendas';
+                                });
+                            } else {
+                                Swal.fire(
+                                    'Venda não concluída',
+                                    data.mensagem,
+                                    'error'
+                                );
+                            }
+                        },
+                        error: function (error) {
+                            Swal.fire(
+                                'Venda não concluída',
+                                'Ocorreu um erro ao concluir a venda.',
+                                'error'
+                            );
+                        }
+                    });
                 }
             });
         }
+
 
         function CancelarVenda(){
             Swal.fire({
