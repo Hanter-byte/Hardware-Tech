@@ -10,14 +10,15 @@
 @{
     if (ViewBag.cpf == null)
     {
-        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#NovaVendaClienteModal">
-            Iniciar
+        <a asp-action="Index" class="btn btn-primary mb-2"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+        <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#NovaVendaClienteModal">
+            Iniciar Venda
         </button>
     }
     else
     {
-        <button disabled type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#NovaVendaClienteModal">
-            Iniciar
+        <button disabled type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#NovaVendaClienteModal">
+            Iniciar Venda
         </button>
     }
 }

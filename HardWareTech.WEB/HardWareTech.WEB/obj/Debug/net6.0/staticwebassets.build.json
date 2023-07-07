@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2CzT3RyDLJNCY7WU/vF63q1LA+yMasQOeK0wDf4fAcY=",
+  "Hash": "uhB3Sx+LDxfXaLVH+gsT/M9RZ2+GSOcUs1ZlY2IXGg4=",
   "Source": "HardWareTech.WEB",
   "BasePath": "_content/HardWareTech.WEB",
   "Mode": "Default",
@@ -1460,6 +1460,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\reports\\Usuario.frx"
+    },
+    {
+      "Identity": "C:\\Users\\joao.psilva\\Desktop\\Hardware-Tech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\reports\\Venda.frx",
+      "SourceId": "HardWareTech.WEB",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\joao.psilva\\Desktop\\Hardware-Tech\\HardWareTech.WEB\\HardWareTech.WEB\\wwwroot\\",
+      "BasePath": "_content/HardWareTech.WEB",
+      "RelativePath": "reports/Venda.frx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\reports\\Venda.frx"
     }
   ]
 }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
 using HardWareTech.WEB.Models;
 using HardWareTech.DATA.Models;
+using FastReport.Export.PdfSimple;
 
 namespace HardWareTech.WEB.Controllers
 {
@@ -10,11 +11,41 @@ namespace HardWareTech.WEB.Controllers
     {
         private readonly VendaService oVendaService = new VendaService();
         private readonly VwProdutoClienteVendaService oProdutoClienteVendaService = new VwProdutoClienteVendaService();
+        public readonly IWebHostEnvironment _webHostEnv;
+
+        public VendasController(IWebHostEnvironment webHostEnvironment)
+        {
+            _webHostEnv = webHostEnvironment;
+        }
+
         public IActionResult Index()
         {
             List<VwProdutoClienteVenda> oVwProdutoClienteVenda = oProdutoClienteVendaService.oRepositoryVwProdutoClienteVenda.SelecionarTodos();
             oVwProdutoClienteVenda = oVwProdutoClienteVenda.DistinctBy(v => v.VendaId).ToList();
             return View(oVwProdutoClienteVenda);
+        }
+
+        [Route("VendasReport")]
+        public IActionResult VendasReport()
+        {
+            var caminhoReport = Path.Combine(_webHostEnv.WebRootPath, @"reports\Venda.frx");
+            var reportFile = caminhoReport;
+            var freport = new FastReport.Report();
+            var clienteList = oProdutoClienteVendaService.oRepositoryVwProdutoClienteVenda.SelecionarTodos();
+
+            freport.Report.Load(reportFile);
+            freport.Dictionary.RegisterBusinessObject(clienteList, "clienteList", 10, true);
+            //freport.Report.Save(reportFile);
+            freport.Prepare();
+
+            var pdfExport = new PDFSimpleExport();
+
+            using MemoryStream ms = new MemoryStream();
+            pdfExport.Export(freport, ms);
+            ms.Flush();
+
+            return File(ms.ToArray(), "application/pdf");
+            //return Ok($"Relatorio gerado: {caminhoReport}");
         }
 
         public IActionResult Venda(string cpf = null)

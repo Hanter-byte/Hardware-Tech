@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="07/07/2023 12:42:27" ReportInfo.Modified="07/07/2023 12:52:36" ReportInfo.CreatorVersion="2023.2.5.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq2/fJeZHfXvLgJXYAsV8U8ZFL4B3d1vFdWju5nQoc3mwQIzwp/Jyv2XMjDiafrcKnN8Rud0YToOUlFrLVl5cBvfNND960chbk/jD70KCR8TnU5v5r+XXmZ+DB9v7KUDSA5VxeDHMvHuQLUjZ+jNdUTwGJO7bX5y/pZhgPFZgk3ce0yMlor9Mefj3gLwMYTrvC6h6HBVMkTWyAWb0RA0E4xOD2Im8wpLvG7tO2hDM5tVY=">
+      <TableDataSource Name="VW_Produto_Cliente_Venda" DataType="System.Int32" Enabled="true" TableName="VW_Produto_Cliente_Venda">
+        <Column Name="CPF" DataType="System.String"/>
+        <Column Name="nome_cliente" DataType="System.String"/>
+        <Column Name="ProdutoVendaID" DataType="System.Int32"/>
+        <Column Name="valorUnitario" DataType="System.Decimal"/>
+        <Column Name="idVenda" DataType="System.Int32"/>
+        <Column Name="VendaID" DataType="System.Int32"/>
+        <Column Name="dataVenda" DataType="System.DateTime"/>
+        <Column Name="valorTotal" DataType="System.Decimal"/>
+        <Column Name="Expr3" DataType="System.Int32"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <MsSqlDataConnection Name="Connection1" ConnectionString="rijcmlq2/fJeZHfXvLgJXYAsV8U8ZFL4B3d1vFdWju5nQoc3mwQIzwp/Jyv2XMjDiafrcKnN8Rud0YToOUlFrLVl5cBvfNND960chbk/jD70KCR8TnU5v5r+XXmZ+DB9v7KUDSA5VxeDHMvHuQLUjZ+jNdUTwGJO7bX5y/pZhgPFZgk3ce0yMlor9Mefj3gLwMYTrvC6h6HBVMkTWyAWb0RA0E4xKKkCb9DaRSVtbCOQlNITbU=">
+      <TableDataSource Name="VW_Produto_Cliente_Venda1" DataType="System.Int32" Enabled="true" TableName="VW_Produto_Cliente_Venda">
+        <Column Name="CPF" DataType="System.String"/>
+        <Column Name="nome_cliente" DataType="System.String"/>
+        <Column Name="ProdutoVendaID" DataType="System.Int32"/>
+        <Column Name="valorUnitario" DataType="System.Decimal"/>
+        <Column Name="idVenda" DataType="System.Int32"/>
+        <Column Name="VendaID" DataType="System.Int32"/>
+        <Column Name="dataVenda" DataType="System.DateTime"/>
+        <Column Name="valorTotal" DataType="System.Decimal"/>
+        <Column Name="Expr3" DataType="System.Int32"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text36" Width="718.2" Height="28.35" Text="Listagem de Vendas&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 14pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="18.9">
+      <TextObject Name="Text13" Left="207.9" Width="245.7" Height="18.9" Fill.Color="129, 128, 128, 128" Text="Nome" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text40" Left="623.7" Width="94.5" Height="18.9" Fill.Color="129, 128, 128, 128" Text="Valor Total" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text42" Width="94.5" Height="18.9" Fill.Color="129, 128, 128, 128" Text="Cód. Venda" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text38" Left="94.5" Width="113.4" Height="18.9" Fill.Color="129, 128, 128, 128" Text="Cpf" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text44" Left="453.6" Width="170.1" Height="18.9" Fill.Color="129, 128, 128, 128" Text="Data Venda" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="64.7" Width="718.2" Height="18.9" DataSource="VW_Produto_Cliente_Venda">
+      <TextObject Name="Text37" Left="207.9" Width="245.7" Height="18.9" Text="[VW_Produto_Cliente_Venda.nome_cliente]" Font="Arial, 10pt"/>
+      <TextObject Name="Text41" Left="623.7" Width="94.5" Height="18.9" Text="[VW_Produto_Cliente_Venda.valorTotal]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text43" Width="94.5" Height="18.9" Text="[VW_Produto_Cliente_Venda.idVenda]" HorzAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text39" Left="94.5" Width="113.4" Height="18.9" Text="[VW_Produto_Cliente_Venda.CPF]" Font="Arial, 10pt"/>
+      <TextObject Name="Text45" Left="453.6" Width="170.1" Height="18.9" Text="[VW_Produto_Cliente_Venda.dataVenda]" Format="Date" Format.Format="d" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="87.6" Width="718.2" Height="18.9">
+      <TextObject Name="Text6" Width="255.15" Height="18.9" Text="Gerado em [Date]" VertAlign="Center" Font="Tahoma, 8pt"/>
+      <TextObject Name="Text5" Left="661.5" Width="56.7" Height="18.9" Text="[PageN]" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 8pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

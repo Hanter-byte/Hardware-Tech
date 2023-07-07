@@ -8,8 +8,16 @@
 <hr />
 
 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-    <a class="btn btn-primary" role="button" asp-controller="Vendas" asp-action="Venda"><i class="fa fa-plus-circle"></i> Nova Venda</a>
+    <div>
+        <a class="btn btn-primary" role="button" asp-controller="Vendas" asp-action="Venda"><i class="fa fa-plus-circle"></i> Nova Venda</a>
+    </div>
+    <div>
+        <a class="btn btn-danger" role="button" asp-controller="Vendas" asp-action="VendasReport" target="_blank">
+            <i class="fa-solid fa-file-pdf"></i> PDF Venda
+        </a>
+    </div>
 </div>
+
 <br />
 
 
@@ -44,7 +52,7 @@
                     @Html.DisplayFor(modelItem => item.NomeCliente)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ValorTotal)
+                    R$ @Html.DisplayFor(modelItem => item.ValorTotal)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.DataVenda)
