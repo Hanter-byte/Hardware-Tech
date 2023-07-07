@@ -49,9 +49,13 @@
       {
          "Name": "[dbo].[VW_Produto_Cliente_Manutencao]",
          "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[VW_Produto_Cliente_Venda]",
+         "ObjectType": 3
       }
    ],
-   "UiHint": "desktop-l7he5rl\\sqlexpress.ControleManutencao.dbo",
+   "UiHint": "CIAN019401165\\SQLEXPRESS.ControleManutencao",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,

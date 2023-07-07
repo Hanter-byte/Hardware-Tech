@@ -27,12 +27,13 @@ namespace HardWareTech.DATA.Models
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Venda> Venda { get; set; }
         public virtual DbSet<VwProdutoClienteManutencao> VwProdutoClienteManutencao { get; set; }
+        public virtual DbSet<VwProdutoClienteVenda> VwProdutoClienteVenda { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=CIAN019401165\\SQLEXPRESS;Initial Catalog=ControleManutencao;Integrated Security=True;Trust Server Certificate=true") ;
+                optionsBuilder.UseSqlServer("Data Source=CIAN019401165\\SQLEXPRESS;Initial Catalog=ControleManutencao;Integrated Security=True;Trust Server Certificate=true");
             }
         }
 
@@ -99,6 +100,11 @@ namespace HardWareTech.DATA.Models
             modelBuilder.Entity<VwProdutoClienteManutencao>(entity =>
             {
                 entity.ToView("VW_Produto_Cliente_Manutencao");
+            });
+
+            modelBuilder.Entity<VwProdutoClienteVenda>(entity =>
+            {
+                entity.ToView("VW_Produto_Cliente_Venda");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -62,6 +62,7 @@ namespace HardWareTech.DATA.Models
 
         [InverseProperty("IdClienteNavigation")]
         public virtual ICollection<ProdutoClienteManutencao> ProdutoClienteManutencao { get; set; }
+        [InverseProperty("IdClienteNavigation")]
         public virtual ICollection<Venda> Venda { get; set; }
 
         public bool ValidarCPF(string cpf)

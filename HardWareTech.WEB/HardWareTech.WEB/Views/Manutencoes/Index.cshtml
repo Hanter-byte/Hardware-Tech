@@ -10,11 +10,11 @@
     <div>
         <a class="btn btn-primary" role="button" asp-controller="Manutencoes" asp-action="Create"><i class="fa fa-plus-circle"></i> Nova Manutenção</a>
     </div>
-    <div>
+@*    <div>
         <a class="btn btn-danger" role="button" asp-controller="Cliente" asp-action="ClientesReport" target="_blank">
             <i class="fa-solid fa-file-pdf"></i> PDF Manutenção
         </a>
-    </div>
+    </div>*@
 </div>
 <br />
 
@@ -49,7 +49,7 @@
             }
         </div>
 
-        <div class="swim-lane">
+        @*<div class="swim-lane">
             <h3 class="heading">Realizando</h3>
             @foreach (var item in Model.Where(x => x.Feito == false))
             {
@@ -57,9 +57,9 @@
                 else if
             (DateTime.Now.Date.Equals(item.DataFinalizacao)) { styleStatus = "bg-warning"; }
 
-                @*<p class="task @styleStatus" draggable="true">@item.NomeCliente - @item.NomeProduto - @item.DataFinalizacao</p>*@
+                <p class="task @styleStatus" draggable="true">@item.NomeCliente - @item.NomeProduto - @item.DataFinalizacao</p>
             }
-        </div>
+        </div>*@
 
         @*<div class="swim-lane">
             <h3 class="heading">Impedimento</h3>

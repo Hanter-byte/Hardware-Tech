@@ -2,13 +2,22 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
 using HardWareTech.WEB.Models;
+using HardWareTech.DATA.Models;
 
 namespace HardWareTech.WEB.Controllers
 {
     public class VendasController : Controller
     {
         private readonly VendaService oVendaService = new VendaService();
-        public IActionResult Index(string cpf = null)
+        private readonly VwProdutoClienteVendaService oProdutoClienteVendaService = new VwProdutoClienteVendaService();
+        public IActionResult Index()
+        {
+            List<VwProdutoClienteVenda> oVwProdutoClienteVenda = oProdutoClienteVendaService.oRepositoryVwProdutoClienteVenda.SelecionarTodos();
+            oVwProdutoClienteVenda = oVwProdutoClienteVenda.DistinctBy(v => v.VendaId).ToList();
+            return View(oVwProdutoClienteVenda);
+        }
+
+        public IActionResult Venda(string cpf = null)
         {
 
             // Produtos
